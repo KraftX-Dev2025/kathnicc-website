@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f8f5f2;
+    --foreground: #3c3530;
+
+    --card: #ffffff;
+    --card-foreground: #3c3530;
+
+    --popover: #ffffff;
+    --popover-foreground: #3c3530;
+
+    --primary: #8b6e4e;
+    --primary-foreground: #ffffff;
+
+    --secondary: #d9c5b3;
+    --secondary-foreground: #3c3530;
+
+    --muted: #ebe3d5;
+    --muted-foreground: #5d534b;
+
+    --accent: #d9c5b3;
+    --accent-foreground: #3c3530;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #f8f5f2;
+
+    --border: #d9c5b3;
+    --input: #d9c5b3;
+    --ring: #8b6e4e;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: #1f1a17;
+    --foreground: #f8f5f2;
+
+    --card: #2a2420;
+    --card-foreground: #f8f5f2;
+
+    --popover: #2a2420;
+    --popover-foreground: #f8f5f2;
+
+    --primary: #8b6e4e;
+    --primary-foreground: #ffffff;
+
+    --secondary: #3d3026;
+    --secondary-foreground: #f8f5f2;
+
+    --muted: #332a24;
+    --muted-foreground: #a39b94;
+
+    --accent: #3d3026;
+    --accent-foreground: #f8f5f2;
+
+    --destructive: #991b1b;
+    --destructive-foreground: #f8f5f2;
+
+    --border: #3d3026;
+    --input: #3d3026;
+    --ring: #8b6e4e;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-playfair);
+}
+
+.font-sans {
+  font-family: var(--font-inter);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
