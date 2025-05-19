@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -37,12 +38,19 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/90 backdrop-blur-md py-3 shadow-sm" : "bg-transparent py-6"
+        scrolled ? "bg-white/80 backdrop-blur-md py-3 shadow-sm" : "bg-white/90 py-6"
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="text-2xl md:text-3xl font-serif tracking-tight text-[#8B6E4E]">
-          Kathnicc
+        <Link href="/" className="flex font-serif tracking-tight text-[#8B6E4E]">
+         <div className="relative h-12 w-32 rounded-md transition-all duration-300">
+            <Image
+              src="/kathnicc_no_bg.webp"
+              alt="Kathnicc Logo"
+              fill
+              className="object-fill" 
+            />
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">

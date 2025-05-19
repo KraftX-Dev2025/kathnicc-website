@@ -4,7 +4,19 @@ import type React from "react"
 
 import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
-import { Phone, Mail, MapPin, Calendar, Send } from "lucide-react"
+import { 
+  Phone, 
+  Mail, 
+  MapPin, 
+  Calendar, 
+  Send, 
+  Instagram, 
+  Facebook, 
+  Linkedin, 
+  Youtube, 
+  MessageSquare
+} from "lucide-react"
+import { FaPinterestP } from "react-icons/fa6";
 
 export default function ContactSection() {
   const ref = useRef<HTMLDivElement>(null)
@@ -99,62 +111,35 @@ export default function ContactSection() {
                   className="w-10 h-10 rounded-full bg-[#8B6E4E] flex items-center justify-center text-white hover:bg-[#7A5F43] transition-colors"
                   aria-label="Instagram"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                  </svg>
+                  <Instagram size={18} />
+                </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-[#8B6E4E] flex items-center justify-center text-white hover:bg-[#7A5F43] transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={18} />
+                </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-[#8B6E4E] flex items-center justify-center text-white hover:bg-[#7A5F43] transition-colors"
+                  aria-label="YouTube"
+                >
+                  <Youtube size={18} />
                 </a>
                 <a
                   href="#"
                   className="w-10 h-10 rounded-full bg-[#8B6E4E] flex items-center justify-center text-white hover:bg-[#7A5F43] transition-colors"
                   aria-label="Pinterest"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
-                    <path d="M21 12c0 4.418 -4.03 8 -9 8a9.863 9.863 0 0 1 -4.255 -.949l-3.745 .949v-3.586a8.955 8.955 0 0 1 -2 -5.414c0 -4.418 4.03 -8 9 -8s9 3.582 9 8z"></path>
-                  </svg>
+                  <FaPinterestP size={18} />
                 </a>
                 <a
                   href="#"
                   className="w-10 h-10 rounded-full bg-[#8B6E4E] flex items-center justify-center text-white hover:bg-[#7A5F43] transition-colors"
                   aria-label="LinkedIn"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                  </svg>
+                  <Linkedin size={18} />
                 </a>
               </div>
             </motion.div>
