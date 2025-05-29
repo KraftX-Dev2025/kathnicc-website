@@ -64,7 +64,7 @@ export default function HeroSection() {
 
       {/* Centered Bottom Button */}
       <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 w-full flex justify-center">
-        <button className="px-3 py-2 text-base sm:text-lg md:text-2xl bg-white text-[#8B6E4E] font-velista font-bold shadow-lg border border-[#8B6E4E] hover:bg-[#f8f5f2] transition-all duration-200 rounded-full w-11/12 max-w-xs sm:max-w-sm md:max-w-md">
+        <button className="px-3 py-2 text-base sm:text-lg md:text-2xl bg-white text-[#8B6E4E] font-velista font-bold shadow-lg border border-[#8B6E4E] hover:bg-[#f8f5f2] transition-all duration-200 w-11/12 max-w-xs sm:max-w-sm md:max-w-md">
           BOOK A CONSULTATION
         </button>
       </div>
