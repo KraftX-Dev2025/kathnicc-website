@@ -61,26 +61,33 @@ export default function Navbar() {
           </Link> */}
         </nav>
 
-        <button className="md:hidden text-[#5D534B] focus:outline-none" onClick={toggleMenu} aria-label="Toggle menu">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        <button className="md:hidden text-white ml-auto focus:outline-none" onClick={toggleMenu} aria-label="Toggle menu">
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ x: '100%', opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: '100%', opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white"
+            className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white shadow-2xl z-[100] flex flex-col p-6 md:hidden"
           >
-            <div className="container mx-auto px-6 py-4 flex flex-col space-y-4">
+            <button
+              className="self-end mb-6 text-[#5D534B] focus:outline-none"
+              onClick={toggleMenu}
+              aria-label="Close menu"
+            >
+              <X size={28} />
+            </button>
+            <nav className="flex flex-col space-y-6 mt-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-[#5D534B] hover:text-[#8B6E4E] transition-colors py-2 text-sm uppercase tracking-wider"
+                  className="text-[#5D534B] hover:text-[#8B6E4E] transition-colors text-lg font-aceh uppercase tracking-wider"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
@@ -88,12 +95,12 @@ export default function Navbar() {
               ))}
               <Link
                 href="#contact"
-                className="px-6 py-2 bg-[#8B6E4E] text-white text-center rounded-sm hover:bg-[#7A5F43] transition-colors text-sm uppercase tracking-wider"
+                className="mt-4 px-6 py-2 bg-[#8B6E4E] text-white text-center rounded-full hover:bg-[#7A5F43] transition-colors text-base uppercase tracking-wider font-aceh"
                 onClick={() => setIsOpen(false)}
               >
                 Book Now
               </Link>
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>
