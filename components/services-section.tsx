@@ -1,46 +1,8 @@
 "use client"
-
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-
-const services = [
-  {
-    id: 1,
-    title: "Interior Design",
-    description:
-      "Tailored interior solutions for new builds, renovations, or redesigns. We combine spatial planning, mood setting, and aesthetic harmony to create truly unique environments.",
-    icon: "✦",
-  },
-  {
-    id: 2,
-    title: "Home Décor Curation",
-    description:
-      "From art pieces to textiles and lighting, we handpick décor that complements your space and enhances your home's character.",
-    icon: "✦",
-  },
-  {
-    id: 3,
-    title: "Luxury Home Makeovers",
-    description:
-      "Transform your living space with full-service makeovers. We handle everything from concept to completion — including sourcing, styling, and installation — with a focus on elegance and quality.",
-    icon: "✦",
-  },
-  {
-    id: 4,
-    title: "Color & Material Consultation",
-    description:
-      "Need help choosing the perfect palette or finishes? Our consultation service helps guide your decisions with expert insights and visual clarity.",
-    icon: "✦",
-  },
-  {
-    id: 5,
-    title: "Turnkey Styling for Real Estate",
-    description:
-      "Selling your home? Our luxury staging service makes your property unforgettable and market-ready with elevated presentation.",
-    icon: "✦",
-  },
-]
+import { ourServices } from "@/lib/constants"
 
 export default function ServicesSection() {
   const ref = useRef<HTMLDivElement>(null)
@@ -61,7 +23,7 @@ export default function ServicesSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.2 },
     },
   }
 
@@ -94,7 +56,7 @@ export default function ServicesSection() {
           animate={isInView ? "visible" : "hidden"}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {services.map((service) => (
+          {ourServices.map((service) => (
             <motion.div
               key={service.id}
               variants={itemVariants}

@@ -40,7 +40,7 @@ export default function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.2 }}
               className="relative"
             >
               <span className="text-[#8B6E4E] uppercase tracking-widest text-sm font-medium">Welcome to Kathnicc</span>
@@ -88,7 +88,7 @@ export default function HeroSection() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
               className="absolute bottom-0 left-0 w-[60%] h-[60%] z-20"
               ref={parallaxRef}
             >

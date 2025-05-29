@@ -4,45 +4,7 @@ import { useRef, useState } from "react"
 import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-
-const portfolioItems = [
-  {
-    id: 1,
-    title: "Modern Minimalist Penthouse",
-    location: "NYC",
-    image: "/image1.jpg",
-  },
-  {
-    id: 2,
-    title: "Bohemian Luxe Villa",
-    location: "Goa",
-    image: "/image2.jpg",
-  },
-  {
-    id: 3,
-    title: "Classic Glamour Living Room",
-    location: "London",
-    image: "/image3.jpg",
-  },
-  {
-    id: 4,
-    title: "Art-Deco Inspired Makeover",
-    location: "Dubai",
-    image: "/image1.jpg",
-  },
-  {
-    id: 5,
-    title: "Contemporary Coastal Retreat",
-    location: "Miami",
-    image: "/image2.jpg",
-  },
-  {
-    id: 6,
-    title: "Scandinavian Inspired Loft",
-    location: "Stockholm",
-    image: "/image3.jpg",
-  },
-]
+import { portfolioItems } from "@/lib/constants"
 
 export default function PortfolioSection() {
   const ref = useRef<HTMLDivElement>(null)
@@ -65,7 +27,7 @@ export default function PortfolioSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.2 },
     },
   }
 
@@ -127,7 +89,7 @@ export default function PortfolioSection() {
                 >
                   <div className="relative h-[400px] md:h-[500px] overflow-hidden group">
                     <Image
-                      src={item.image || "/placeholder.svg"}
+                      src={item.image}
                       alt={item.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"

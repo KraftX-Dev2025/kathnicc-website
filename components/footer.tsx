@@ -1,132 +1,86 @@
-import { Instagram, Linkedin, Youtube, Phone, Mail, MapPin, Clock, MessageSquare, Facebook } from "lucide-react";
-import { FaPinterestP } from "react-icons/fa6";
+import { contactInfo, quickLinks, services, socialLinks } from "@/lib/constants";
 
 export default function Footer() {
+
+  const renderSocialLink = (social: any) => {
+    const IconComponent = social.icon;
+    return (
+      <a
+        key={social.label}
+        href={social.href}
+        className="text-white text-sm sm:text-base transition-colors hover:scale-125"
+        aria-label={social.label}
+      >
+        <IconComponent size={20} />
+      </a>
+    );
+  };
+
+  const renderNavLink = (link: any) => (
+    <li key={link.label}>
+      <a
+        href={link.href}
+        className="text-white/70 hover:text-white text-sm sm:text-base transition-colors hover:scale-125"
+      >
+        {link.label}
+      </a>
+    </li>
+  );
+
+  const renderContactItem = (contact: any) => {
+    const IconComponent = contact.icon;
+    return (
+      <li key={contact.text} className="text-white/70 text-sm sm:text-base flex flex-col sm:flex-row justify-start items-start gap-2">
+        <IconComponent size={18} />
+        <span className="text-wrap">{contact.text}</span>
+      </li>
+    );
+  };
+
   return (
     <footer className="bg-[#3C3530] text-white py-12">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+          {/* Company Info */}
           <div>
-            <div className="text-xl font-serif mb-4 font-bold">Kathnicc</div>
-            <p className="text-white/80 text-sm mb-6">
+            <p className="text-white/80 font-semibold text-base mb-6">
               Luxury interior design for discerning clients. We transform spaces into timeless works of art.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-white/70 hover:text-white transition-colors hover:scale-125" aria-label="Instagram">
-                <Instagram size={18} />
-              </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors hover:scale-125" aria-label="Facebook">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors hover:scale-125" aria-label="YouTube">
-                <Youtube size={18} />
-              </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors hover:scale-125" aria-label="LinkedIn">
-                <Linkedin size={18} />
-              </a>
-              <a
-                href="#"
-                className="text-white/70 hover:text-white transition-colors hover:scale-125"
-                aria-label="Pinterest"
-              >
-                <FaPinterestP size={18} />
-              </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors hover:scale-125" aria-label="WhatsApp">
-                <MessageSquare size={18} />
-              </a>
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 px-4 sm:px-2">
+              {socialLinks.map(renderSocialLink)}
             </div>
           </div>
+
+          {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-medium mb-4">Quick Links</h3>
+            <div className="text-base font-medium mb-4 underline underline-offset-4">Quick Links</div>
             <ul className="space-y-2">
-              <li>
-                <a href="#home" className="text-white/70 hover:text-white transition-colors hover:scale-125">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-white/70 hover:text-white transition-colors hover:scale-125">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-white/70 hover:text-white transition-colors hover:scale-125">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#portfolio" className="text-white/70 hover:text-white transition-colors hover:scale-125">
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a href="#blog" className="text-white/70 hover:text-white transition-colors hover:scale-125">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-white/70 hover:text-white transition-colors hover:scale-125">
-                  Contact
-                </a>
-              </li>
+              {quickLinks.map(renderNavLink)}
             </ul>
           </div>
+
+          {/* Services */}
           <div>
-            <h3 className="text-lg font-medium mb-4">Services</h3>
+            <div className="text-base font-medium mb-4 underline underline-offset-4">Services</div>
             <ul className="space-y-2">
-              <li>
-                <a href="#services" className="text-white/70 hover:text-white transition-colors hover:scale-125">
-                  Interior Design
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-white/70 hover:text-white transition-colors hover:scale-125">
-                  Home Décor Curation
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-white/70 hover:text-white transition-colors hover:scale-125">
-                  Luxury Home Makeovers
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-white/70 hover:text-white transition-colors hover:scale-125">
-                  Color & Material Consultation
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-white/70 hover:text-white transition-colors hover:scale-125">
-                  Turnkey Styling for Real Estate
-                </a>
-              </li>
+              {services.map(renderNavLink)}
             </ul>
           </div>
+
+          {/* Contact */}
           <div>
-            <h3 className="text-lg font-medium mb-4">Contact</h3>
+            <div className="text-base font-medium mb-4 underline underline-offset-4">Contact</div>
             <ul className="space-y-2">
-              <li className="text-white/70 flex items-center gap-2">
-                <Phone size={16} />
-                <span>+91-XXXXXXXXXX</span>
-              </li>
-              <li className="text-white/70 flex items-center gap-2">
-                <Mail size={16} />
-                <span>hello@kathnicc.com</span>
-              </li>
-              <li className="text-white/70 flex items-center gap-2">
-                <MapPin size={16} />
-                <span>Mumbai, Available Globally</span>
-              </li>
-              <li className="text-white/70 flex items-center gap-2">
-                <Clock size={16} />
-                <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
-              </li>
+              {contactInfo.map(renderContactItem)}
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/20 mt-12 pt-6 text-center text-white/50 text-sm">
+
+        {/* Copyright */}
+        <div className="border-t border-white/20 mt-12 pt-6 text-center text-white/50 text-xs sm:text-sm">
           <p>&copy; {new Date().getFullYear()} Kathnicc. All rights reserved.</p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
+import { navLinks } from "@/lib/constants"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,16 +25,6 @@ export default function Navbar() {
   }, [])
 
   const toggleMenu = () => setIsOpen(!isOpen)
-
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact", href: "#contact" },
-  ]
 
   return (
     <header

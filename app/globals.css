@@ -101,3 +101,8 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+link[rel="icon"] {
+  background-color: white;
+  border-radius: 50%;
+}

@@ -1,41 +1,10 @@
 "use client"
-
 import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, useInView } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-
-const blogPosts = [
-  {
-    id: 1,
-    title: "The Psychology of Color in Interiors",
-    excerpt: "How different colors affect mood, perception, and behavior in your living spaces.",
-    image: "/image1.jpg",
-    date: "May 10, 2025",
-  },
-  {
-    id: 2,
-    title: "How to Style a Luxury Living Room",
-    excerpt: "Expert tips for creating a sophisticated, inviting living space that exudes luxury.",
-    image: "/image2.jpg",
-    date: "April 28, 2025",
-  },
-  {
-    id: 3,
-    title: "Timeless vs. Trendy: What's Right for Your Home?",
-    excerpt: "Finding the perfect balance between enduring design and contemporary trends.",
-    image: "/image3.jpg",
-    date: "April 15, 2025",
-  },
-  {
-    id: 4,
-    title: "Our Favorite Statement Pieces This Season",
-    excerpt: "Discover the standout furniture and décor items that are making waves this season.",
-    image: "/image3.jpg",
-    date: "March 30, 2025",
-  },
-]
+import { blogPosts } from "@/lib/constants"
 
 export default function BlogSection() {
   const ref = useRef<HTMLDivElement>(null)
@@ -56,7 +25,7 @@ export default function BlogSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.2 },
     },
   }
 
@@ -88,12 +57,12 @@ export default function BlogSection() {
           animate={isInView ? "visible" : "hidden"}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {blogPosts.slice(0, 3).map((post) => (
+          {blogPosts?.slice(0, 3).map((post) => (
             <motion.article key={post.id} variants={itemVariants} className="group">
               <Link href="#" className="block">
                 <div className="relative h-64 mb-6 overflow-hidden">
                   <Image
-                    src={post.image || "/placeholder.svg"}
+                    src={post.image}
                     alt={post.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"

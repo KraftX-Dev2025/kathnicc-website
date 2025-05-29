@@ -17,6 +17,7 @@ import {
   MessageSquare
 } from "lucide-react"
 import { FaPinterestP } from "react-icons/fa6";
+import { contactFormFields, contactInfo, socialLinks } from "@/lib/constants"
 
 export default function ContactSection() {
   const ref = useRef<HTMLDivElement>(null)
@@ -43,7 +44,7 @@ export default function ContactSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.4 },
     },
   }
 
@@ -58,6 +59,67 @@ export default function ContactSection() {
     console.log(formState)
     alert("Thank you for your message. We'll get back to you soon!")
     setFormState({ name: "", email: "", phone: "", message: "" })
+  }
+
+  // Render contact information item
+  const renderContactItem = (contact: typeof contactInfo[0]) => {
+    const IconComponent = contact.icon
+    return (
+      <div key={contact.label} className="flex items-center">
+        <IconComponent className="text-[#8B6E4E] mr-4" size={20} />
+        <span className="text-[#5D534B]">{contact.text}</span>
+      </div>
+    )
+  }
+
+  // Render social media link
+  const renderSocialLink = (social: typeof socialLinks[0]) => {
+    const IconComponent = social.icon
+    return (
+      <a
+        key={social.label}
+        href={social.href}
+        className="w-10 h-10 rounded-full bg-[#8B6E4E] flex items-center justify-center text-white hover:bg-[#7A5F43] transition-colors"
+        aria-label={social.label}
+      >
+        <IconComponent size={18} />
+      </a>
+    )
+  }
+
+  // Render form field
+  const renderFormField = (field: typeof contactFormFields[0]) => {
+    const baseClasses = "w-full px-4 py-2 border border-[#D9C5B3] rounded-sm focus:outline-none focus:ring-2 focus:ring-[#8B6E4E]"
+    return (
+      <div key={field.name}>
+        <label htmlFor={field.name} className="block text-[#5D534B] mb-2">
+          {field.label}
+        </label>
+        {field.type === "textarea" ? (
+          <textarea
+            id={field.name}
+            name={field.name}
+            value={formState[field.name as keyof typeof formState]}
+            onChange={handleChange}
+            required={field.required}
+            rows={field.rows}
+            placeholder={field.placeholder}
+            className={baseClasses}
+          />
+        ) : (
+          <input
+            type={field.type}
+            id={field.name}
+            name={field.name}
+            value={formState[field.name as keyof typeof formState]}
+            onChange={handleChange}
+            required={field.required}
+            placeholder={field.placeholder}
+            className={baseClasses}
+          />
+        )}
+      </div>
+    )
   }
 
   return (
@@ -84,63 +146,14 @@ export default function ContactSection() {
             <motion.div variants={itemVariants} className="mb-8">
               <h3 className="text-2xl font-serif text-[#3C3530] mb-6">Contact Information</h3>
               <div className="space-y-4">
-                <div className="flex items-center">
-                  <Phone className="text-[#8B6E4E] mr-4" size={20} />
-                  <span className="text-[#5D534B]">+91-XXXXXXXXXX</span>
-                </div>
-                <div className="flex items-center">
-                  <Mail className="text-[#8B6E4E] mr-4" size={20} />
-                  <span className="text-[#5D534B]">hello@kathnicc.com</span>
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="text-[#8B6E4E] mr-4" size={20} />
-                  <span className="text-[#5D534B]">Studio: Mumbai, Available Globally</span>
-                </div>
-                <div className="flex items-center">
-                  <Calendar className="text-[#8B6E4E] mr-4" size={20} />
-                  <span className="text-[#5D534B]">Mon - Fri: 9:00 AM - 6:00 PM</span>
-                </div>
+                {contactInfo.map(renderContactItem)}
               </div>
             </motion.div>
 
             <motion.div variants={itemVariants}>
               <h3 className="text-2xl font-serif text-[#3C3530] mb-6">Follow Us</h3>
               <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-[#8B6E4E] flex items-center justify-center text-white hover:bg-[#7A5F43] transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={18} />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-[#8B6E4E] flex items-center justify-center text-white hover:bg-[#7A5F43] transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook size={18} />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-[#8B6E4E] flex items-center justify-center text-white hover:bg-[#7A5F43] transition-colors"
-                  aria-label="YouTube"
-                >
-                  <Youtube size={18} />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-[#8B6E4E] flex items-center justify-center text-white hover:bg-[#7A5F43] transition-colors"
-                  aria-label="Pinterest"
-                >
-                  <FaPinterestP size={18} />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-[#8B6E4E] flex items-center justify-center text-white hover:bg-[#7A5F43] transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={18} />
-                </a>
+                {socialLinks.map(renderSocialLink)}
               </div>
             </motion.div>
           </motion.div>
@@ -149,61 +162,7 @@ export default function ContactSection() {
             <motion.form variants={itemVariants} onSubmit={handleSubmit} className="bg-white p-8 rounded-sm shadow-sm">
               <h3 className="text-2xl font-serif text-[#3C3530] mb-6">Send us a message</h3>
               <div className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-[#5D534B] mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formState.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-[#D9C5B3] rounded-sm focus:outline-none focus:ring-2 focus:ring-[#8B6E4E]"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-[#5D534B] mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-[#D9C5B3] rounded-sm focus:outline-none focus:ring-2 focus:ring-[#8B6E4E]"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-[#5D534B] mb-2">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formState.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-[#D9C5B3] rounded-sm focus:outline-none focus:ring-2 focus:ring-[#8B6E4E]"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-[#5D534B] mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formState.message}
-                    onChange={handleChange}
-                    required
-                    rows={4}
-                    className="w-full px-4 py-2 border border-[#D9C5B3] rounded-sm focus:outline-none focus:ring-2 focus:ring-[#8B6E4E]"
-                  ></textarea>
-                </div>
+                {contactFormFields.map(renderFormField)}
                 <button
                   type="submit"
                   className="w-full px-6 py-3 bg-[#8B6E4E] text-white rounded-sm hover:bg-[#7A5F43] transition-colors flex items-center justify-center"
