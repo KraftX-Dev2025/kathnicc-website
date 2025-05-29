@@ -37,18 +37,17 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/80 backdrop-blur-md py-3 shadow-sm" : "bg-white/90 py-6"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white backdrop-blur-md py-2 shadow-sm" : "bg-white py-4"
+        }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="flex font-serif tracking-tight text-[#8B6E4E]">
-         <div className="relative h-12 w-32 rounded-md transition-all duration-300">
+          <div className="relative h-12 w-32 rounded-md transition-all duration-300">
             <Image
               src="/kathnicc_no_bg.webp"
               alt="Kathnicc Logo"
               fill
-              className="object-fill" 
+              className="object-fill"
             />
           </div>
         </Link>

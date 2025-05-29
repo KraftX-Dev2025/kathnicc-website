@@ -92,3 +92,25 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* @font-face {
+  font-family: 'BethanyAvanue';
+  src: url('/fonts/BethanyAvanue.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/* @font-face {
+  font-family: 'Cherolina';
+  src: url('/fonts/Cherolina.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/* @font-face {
+  font-family: 'Calligraphy';
+  src: url('/fonts/Calligraphy.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+

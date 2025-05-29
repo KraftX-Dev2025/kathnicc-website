@@ -86,7 +86,7 @@ export default function ContactSection() {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Phone className="text-[#8B6E4E] mr-4" size={20} />
-                  <span className="text-[#5D534B]">+91-XXXXXXXXXX</span>
+                  <span className="text-[#5D534B]">+91-8767834926</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="text-[#8B6E4E] mr-4" size={20} />

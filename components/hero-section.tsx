@@ -1,132 +1,90 @@
 "use client"
 
-import { useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 export default function HeroSection() {
-  const parallaxRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (parallaxRef.current) {
-        const scrollY = window.scrollY
-        parallaxRef.current.style.transform = `translateY(${scrollY * 0.4}px)`
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section
+      id="home"
+      className="relative flex flex-col lg:flex-row overflow-hidden"
+      style={{
+        minHeight: "calc(100vh - 5rem)",
+        height: "calc(100vh - 5rem)",
+        marginTop: "5rem",
+      }}
+    >
+      {/* Left Side - Full Height Image */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative w-full lg:w-1/2 h-1/2 lg:h-full"
+      >
         <Image
-          src="/hero-bg.jpg"
+          src="/hero-image.jpg"
           alt="Luxury interior"
           fill
-          className="object-cover opacity-80 shadow-xl"
+          className="object-cover"
           priority
+          quality={85}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F8F5F2]/90 to-[#F8F5F2]/60" />
-      </div>
+        {/* Optional overlay for better contrast */}
+        <div className="absolute inset-0 bg-black/10" />
+      </motion.div>
 
-      <div className="container mx-auto px-6 z-10 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <span className="text-[#8B6E4E] uppercase tracking-widest text-sm font-medium">Welcome to Kathnicc</span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight mt-4 text-[#3C3530]">
-                Luxury Living, <br />
-                <span className="text-[#8B6E4E]">Thoughtfully</span> Designed
-              </h1>
-              <p className="mt-6 text-lg text-[#5D534B] max-w-lg">
-                Elevate your space with Kathnicc — where interior design meets artistry and refined living. From curated
-                home décor to full-scale luxury makeovers, we craft timeless interiors that reflect your lifestyle,
-                taste, and story.
-              </p>
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="#portfolio"
-                  className="px-8 py-3 bg-[#8B6E4E] text-white rounded-sm hover:bg-[#7A5F43] transition-colors inline-flex items-center justify-center"
-                >
-                  View Our Portfolio
-                  <ArrowRight size={16} className="ml-2" />
-                </Link>
-                <Link
-                  href="#contact"
-                  className="px-8 py-3 border border-[#8B6E4E] text-[#8B6E4E] rounded-sm hover:bg-[#8B6E4E]/10 transition-colors inline-flex items-center justify-center"
-                >
-                  Book a Consultation
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-
-          <div className="relative h-[500px] hidden lg:block">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute top-0 right-0 w-[80%] h-[80%] z-10"
-            >
-              <Image
-                src="/image1.jpg"
-                alt="Luxury living room"
-                fill
-                className="object-cover rounded-md shadow-2xl"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute bottom-0 left-0 w-[60%] h-[60%] z-20"
-              ref={parallaxRef}
-            >
-              <Image
-                src="/image2.jpg"
-                alt="Interior detail"
-                fill
-                className="object-cover rounded-md shadow-2xl"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="absolute top-[20%] left-[10%] w-20 h-20 rounded-full bg-[#D9C5B3] z-0"
-            />
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.8 }}
-              className="absolute bottom-[10%] right-[15%] w-16 h-16 rounded-full bg-[#8B6E4E]/20 z-0"
-            />
-          </div>
+      {/* Right Side - Content */}
+      <div className="relative w-full lg:w-1/2 h-1/2 lg:h-full flex items-center justify-center bg-[#F8F5F2] overflow-hidden pt-0 lg:pt-28">
+        {/* Texture Background */}
+        <div className="absolute inset-0 opacity-60">
+          <Image
+            src="/texture-bg.jpg"
+            alt="Background texture"
+            fill
+            className="object-cover"
+            quality={50}
+          />
         </div>
-      </div>
-
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center">
+        {/* Logo at top left */}
+        <div className="absolute top-20 left-36 z-20">
+          <Image src={"/kathnicc_no_bg.webp"} alt="Logo" width={200} height={200} />
+        </div>
+        {/* Decorative Line */}
+        <div className="w-[36rem] h-[2px] bg-[#8b6d4eac] rounded-full absolute top-44 left-36 z-30" />
         <motion.div
-          initial={{ y: 0 }}
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="relative text-center px-6 lg:px-12 max-w-full z-10"
         >
-          <Link href="#about" className="text-[#8B6E4E] flex flex-col items-center">
-            <span className="text-xs uppercase tracking-widest mb-2">Scroll</span>
-            <div className="w-6 h-10 border-2 border-[#8B6E4E] rounded-full flex justify-center pt-1">
-              <div className="w-1 h-2 bg-[#8B6E4E] rounded-full" />
-            </div>
-          </Link>
+          {/* Text Block */}
+
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-['poppins'] text-[#8B6E4E] leading-tight font-semibold text-left">
+            LUXURY LIVING,
+            <span className="block text-[#8B6E4E] mt-4">THOUGHTFULLY
+            </span>
+            <span className=" relative text-black font-['Adelia'] top-6 right-4 text-8xl font-normal">Designed</span>
+          </h1>
+
+          <p className="mt-16 text-lg text-black font-['Roboto'] leading-relaxed text-left">
+            Elevate your space with Kathnicc —
+          </p>
+          <p className=" text-lg text-black font-['Roboto'] leading-relaxed text-left">
+            where interior design meets artistry and refined living.
+          </p>
+
+          {/* Call-to-Action Button */}
+          <div className="flex justify-start mt-12">
+            <Link
+              href="#portfolio"
+              className="mt-8 inline-flex items-center justify-start px-4 py-2 bg-[#8B6E4E] text-white font-['Roboto'] font-medium rounded-sm hover:bg-[#7A5F43] transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Explore Our Work
+              <ArrowRight size={18} className="ml-2" />
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>
