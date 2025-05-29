@@ -31,7 +31,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-transparent py-2 shadow-sm" : "bg-transparent py-4"
         }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mt-4 px-6 flex justify-between items-center">
         {/* <Link href="/" className="flex font-serif tracking-tight text-[#8B6E4E]">
           <div className="relative h-12 w-32 rounded-md transition-all duration-300">
             <Image
@@ -48,7 +48,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-white hover:text-[#8B6E4E] transition-colors text-lg uppercase tracking-wider"
+              className="text-white hover:text-[#8B6E4E] transition-colors text-xl uppercase tracking-wider"
             >
               {link.name}
             </Link>

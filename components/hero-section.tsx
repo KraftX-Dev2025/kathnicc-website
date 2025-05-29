@@ -28,12 +28,12 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Floating Content Card */}
-      <div className="relative z-10 w-full h-full flex items-center justify-center lg:justify-end px-4 lg:px-16 pb-24">
+      <div className="relative z-10 w-full h-full flex items-center justify-center lg:justify-end px-4 lg:px-16 pb-36">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="bg-white/70 backdrop-blur-sm shadow-2xl p-8 lg:p-12 max-w-lg lg:max-w-xl w-1/4 mx-4 lg:mx-0 lg:mr-8 h-full flex flex-col justify-start"
+          className="bg-white/70 backdrop-blur-sm shadow-2xl p-8 lg:p-12 max-w-lg lg:max-w-xl w-1/4 mx-4 lg:mx-0 lg:mr-24 h-full flex flex-col justify-start"
         >
           {/* Logo */}
           <div className="mb-6 flex justify-center">
@@ -41,7 +41,7 @@ export default function HeroSection() {
           </div>
 
           {/* Text Block */}
-          <h1 className="text-2xl font-['VELISTA'] text-black/70 leading-tight font-semibold text-center">
+          <h1 className="text-2xl font-velista text-black/70 leading-tight font-semibold text-center">
             LUXURY LIVING THOUGHTFULLY
           </h1>
           {/* Decorative Line */}
@@ -62,6 +62,19 @@ export default function HeroSection() {
 
         </motion.div>
 
+      </div>
+
+      {/* Centered Bottom Button */}
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20">
+        <button className="px-4 py-2 text-2xl bg-white text-[#8B6E4E] font-velista font-bold shadow-lg border border-[#8B6E4E] hover:bg-[#f8f5f2] transition-all duration-200">
+          BOOK A CONSULTATION
+        </button>
+      </div>
+      {/* Tagline below button */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <span className="text-white font-velista tracking-wide whitespace-nowrap text-2xl font-bold">
+          HOME DECOR - LUXURY INTERIOR - SPACE PLANNING
+        </span>
       </div>
 
     </section>
