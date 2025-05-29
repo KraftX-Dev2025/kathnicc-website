@@ -28,11 +28,11 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white backdrop-blur-md py-2 shadow-sm" : "bg-white py-4"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-transparent py-2 shadow-sm" : "bg-transparent py-4"
         }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="flex font-serif tracking-tight text-[#8B6E4E]">
+        {/* <Link href="/" className="flex font-serif tracking-tight text-[#8B6E4E]">
           <div className="relative h-12 w-32 rounded-md transition-all duration-300">
             <Image
               src="/kathnicc_no_bg.webp"
@@ -41,24 +41,24 @@ export default function Navbar() {
               className="object-fill"
             />
           </div>
-        </Link>
+        </Link> */}
 
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-[#5D534B] hover:text-[#8B6E4E] transition-colors text-sm uppercase tracking-wider"
+              className="text-white hover:text-[#8B6E4E] transition-colors text-lg uppercase tracking-wider"
             >
               {link.name}
             </Link>
           ))}
-          <Link
+          {/* <Link
             href="#contact"
             className="ml-4 px-6 py-2 bg-[#8B6E4E] text-white rounded-sm hover:bg-[#7A5F43] transition-colors text-sm uppercase tracking-wider"
           >
             Book Now
-          </Link>
+          </Link> */}
         </nav>
 
         <button className="md:hidden text-[#5D534B] focus:outline-none" onClick={toggleMenu} aria-label="Toggle menu">

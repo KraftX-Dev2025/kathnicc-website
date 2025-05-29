@@ -43,7 +43,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
       </head>
-      <body className={`${poppins.variable} ${playfair.variable} ${roboto.variable} font-sans antialiased`} suppressHydrationWarning>
+      <body className={`${poppins.variable} ${playfair.variable} ${roboto.variable} font-aceh antialiased`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>

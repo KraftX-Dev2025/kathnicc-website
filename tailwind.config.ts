@@ -18,6 +18,15 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        'sans': ['Aceh Light', 'ui-sans-serif', 'system-ui'],
+        'aceh': ['Aceh Light', 'sans-serif'],
+        'adelia': ['Adelia', 'serif'],
+        'velista': ['Velista', 'serif'],
+        'poppins': ['var(--font-poppins)', 'sans-serif'],
+        'playfair': ['var(--font-playfair)', 'serif'],
+        'roboto': ['var(--font-roboto)', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
