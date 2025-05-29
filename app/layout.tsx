@@ -1,19 +1,26 @@
-
 import type React from "react"
 import "./globals.css"
-import { Inter, Playfair_Display } from "next/font/google"
+import { Poppins, Playfair_Display, Roboto } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 })
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-playfair",
+})
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
+  weight: ["100", "300", "400", "500", "700", "900"]
 })
 
 export const metadata = {
@@ -36,7 +43,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`} suppressHydrationWarning>
+      <body className={`${poppins.variable} ${playfair.variable} ${roboto.variable} font-sans antialiased`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>

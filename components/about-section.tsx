@@ -69,7 +69,7 @@ export default function AboutSection() {
               variants={itemVariants}
               className="text-[#8B6E4E] uppercase tracking-widest text-sm font-medium"
             >
-              About Kathnicc
+              <Image src={"/kathnicc_no_bg.webp"} alt="Logo" width={400} height={400} className="inline-block mr-2" />
             </motion.span>
             <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-serif text-[#3C3530]">
               Your Story, Your Space — <br />

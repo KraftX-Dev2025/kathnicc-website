@@ -146,6 +146,7 @@ export default function ContactSection() {
             <motion.div variants={itemVariants} className="mb-8">
               <h3 className="text-2xl font-serif text-[#3C3530] mb-6">Contact Information</h3>
               <div className="space-y-4">
+
                 {contactInfo.map(renderContactItem)}
               </div>
             </motion.div>
