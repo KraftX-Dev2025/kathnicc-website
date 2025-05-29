@@ -102,15 +102,7 @@
   scrollbar-width: none; /* Firefox */
 }
 
-@font-face {
-  font-family: 'BethanyAvanue';
-  src: url('/fonts/BethanyAvanue.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Adelia';
-  src: url('/fonts/Adelia.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+link[rel="icon"] {
+  background-color: white;
+  border-radius: 50%;
 }

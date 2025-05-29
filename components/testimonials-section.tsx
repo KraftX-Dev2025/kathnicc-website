@@ -4,45 +4,7 @@ import { useRef, useState } from "react"
 import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
-
-const testimonials = [
-  {
-    id: 1,
-    name: "Rhea M.",
-    location: "Mumbai",
-    quote: "Kathnicc turned our home into a work of art. Every corner tells a story.",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    id: 2,
-    name: "David L.",
-    location: "Dubai",
-    quote: "From the mood boards to the final reveal, the process was seamless. It's luxury without the fuss.",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    id: 3,
-    name: "Priya & Arjun S.",
-    location: "Bengaluru",
-    quote: "They truly listened to what we wanted and elevated it beyond anything we imagined.",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    id: 4,
-    name: "Natasha M.",
-    location: "Pune",
-    quote:
-      "Kathnicc made our dream home a reality. Every corner reflects our taste and personality — beyond expectations.",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    id: 5,
-    name: "Aman & Reema T.",
-    location: "Dubai",
-    quote: "Working with them was seamless and inspiring. They respected our ideas and elevated them beautifully.",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-]
+import { testimonials } from "@/lib/constants"
 
 export default function TestimonialsSection() {
   const ref = useRef<HTMLDivElement>(null)
@@ -64,7 +26,7 @@ export default function TestimonialsSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.2 },
     },
   }
 
@@ -113,7 +75,7 @@ export default function TestimonialsSection() {
                   <div key={testimonial.id} className="min-w-full px-4 flex flex-col items-center">
                     <div className="relative w-20 h-20 mb-6">
                       <Image
-                        src={testimonial.image || "/placeholder.svg"}
+                        src={testimonial.image}
                         alt={testimonial.name}
                         fill
                         className="object-cover rounded-full"

@@ -84,7 +84,7 @@ export default function FloatingCards() {
           }}
         >
           <div className="relative w-full h-full">
-            <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
+            <Image src={item.image} alt={item.name} fill className="object-cover" />
             <div className="absolute bottom-0 left-0 right-0 bg-white/80 backdrop-blur-sm p-4">
               <h3 className="text-[#3C3530] font-serif">{item.name}</h3>
             </div>
