@@ -21,10 +21,8 @@ export default function HeroSection() {
           fill
           className="object-cover"
           priority
-          quality={85}
+          quality={100}
         />
-        {/* Optional overlay for better contrast */}
-        <div className="absolute inset-0 bg-black/20" />
       </motion.div>
 
       {/* Floating Content Card */}
@@ -45,12 +43,12 @@ export default function HeroSection() {
             LUXURY LIVING THOUGHTFULLY
           </h1>
           {/* Decorative Line */}
-          <div className="h-[2px] bg-[#8C4F23] rounded-full mb-6 sm:mb-8 w-2/3 md:w-[55%] mx-auto" />
-          <span className="relative bottom-2 sm:bottom-4 text-[#8C4F23] font-adelia mt-2 text-2xl sm:text-3xl md:text-5xl font-normal text-center block">Designed</span>
+          <span className="h-[2px] border border-[#8B6E4E] mb-6 w-2/3 md:w-[55%] mx-auto" />
+          <span className="relative bottom-2 sm:bottom-4 -ml-8 text-[#8C4F23] font-adelia mt-2 text-2xl sm:text-3xl md:text-5xl font-normal text-center block">Designed</span>
 
           {/* Text Block matching the image */}
           <div className="mt-8 sm:mt-10 md:mt-12 w-full flex items-center flex-col justify-center px-2 sm:px-4 md:px-10">
-            <p className="text-sm sm:text-base md:text-lg font-semibold text-[#3C3530] font-aceh leading-snug text-left w-full">
+            <p className="text-sm sm:text-base md:text-lg text-[#3C3530] font-aceh leading-snug text-left w-full">
               Elevate your space with Kathanicc –<br />
               where interior design meets artistry and refined living
             </p>
@@ -64,13 +62,13 @@ export default function HeroSection() {
 
       {/* Centered Bottom Button */}
       <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 w-full flex justify-center">
-        <button className="px-3 py-2 text-base sm:text-lg md:text-2xl bg-white text-[#8B6E4E] font-velista font-bold shadow-lg border border-[#8B6E4E] hover:bg-[#f8f5f2] transition-all duration-200 w-11/12 max-w-xs sm:max-w-sm md:max-w-md">
+        <button className="px-3 py-2 text-lg bg-white text-[#8B6E4E] font-velista font-bold shadow-lg border border-[#8B6E4E] hover:bg-[#f8f5f2] transition-all duration-200 ">
           BOOK A CONSULTATION
         </button>
       </div>
       {/* Tagline below button */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 w-full flex justify-center">
-        <span className="text-white font-velista tracking-wide whitespace-normal text-xs sm:text-base md:text-2xl font-bold text-center px-2">
+        <span className="text-white font-velista tracking-wide whitespace-normal text-lg font-bold text-center px-2">
           HOME DECOR - LUXURY INTERIOR - SPACE PLANNING
         </span>
       </div>
