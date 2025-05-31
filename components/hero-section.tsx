@@ -35,7 +35,7 @@ export default function HeroSection() {
         >
           {/* Logo */}
           <div className="mb-4 sm:mb-6 flex justify-center">
-            <Image src={"/k-logo.webp"} alt="Logo" width={100} height={100} className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-32 lg:h-32" />
+            <Image src={"/k-logo.webp"} alt="Logo" width={80} height={80} className="w-20 h-20 sm:w-28 sm:h-28 md:w-28 md:h-28 lg:w-24 lg:h-24" />
           </div>
 
           {/* Text Block */}
@@ -43,17 +43,17 @@ export default function HeroSection() {
             LUXURY LIVING THOUGHTFULLY
           </h1>
           {/* Decorative Line */}
-          <span className="h-[2px] border border-[#8B6E4E] mb-6 w-2/3 md:w-[55%] mx-auto" />
+          <span className="h-[2px] border border-[#8B6E4E] mb-6 w-2/3 md:w-[70%] mx-auto" />
           <span className="relative bottom-2 sm:bottom-4 -ml-8 text-[#8C4F23] font-adelia mt-2 text-2xl sm:text-3xl md:text-5xl font-normal text-center block">Designed</span>
 
           {/* Text Block matching the image */}
-          <div className="mt-8 sm:mt-10 md:mt-12 w-full flex items-center flex-col justify-center px-2 sm:px-4 md:px-10">
-            <p className="text-sm sm:text-base md:text-lg text-[#3C3530] font-aceh leading-snug text-left w-full">
+          <div className="mt-8 sm:mt-10 md:mt-12 w-full flex items-center flex-col justify-center px-2 sm:px-4 md:px-4 md:ml-2">
+            <p className="text-sm sm:text-base md:text-md 2xl:text-md  text-[#3C3530] font-aceh leading-snug text-left w-full">
               Elevate your space with Kathanicc –<br />
               where interior design meets artistry and refined living
             </p>
-            <div className="w-full h-[2px] bg-[#8B6E4E] rounded-full my-4 sm:my-6" />
-            <p className="text-[13px] sm:text-[15px] md:text-[17px] text-[#3C3530] font-aceh leading-snug text-left w-full">
+            <div className="w-full h-[2px] bg-[#8B6E4E] rounded-full my-4 sm:my-2" />
+            <p className="text-sm sm:text-base md:text-md 2xl:text-md text-[#3C3530] font-aceh leading-snug text-left w-full">
               From curated home décor to full-scale luxury makeovers, we craft timeless interiors that reflect your lifestyle, taste, and story.
             </p>
           </div>
@@ -62,7 +62,7 @@ export default function HeroSection() {
 
       {/* Centered Bottom Button */}
       <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 w-full flex justify-center">
-        <button className="px-3 py-2 text-lg bg-white text-[#8B6E4E] font-velista font-bold shadow-lg border border-[#8B6E4E] hover:bg-[#f8f5f2] transition-all duration-200 ">
+        <button className="px-3 py-2 text-lg bg-white text-[#8B6E4E] font-velista font-bold shadow-lg border border-[#8B6E4E] hover:bg-[#f8f5f2] transition-all duration-200 mb-8 sm:mb-0">
           BOOK A CONSULTATION
         </button>
       </div>
