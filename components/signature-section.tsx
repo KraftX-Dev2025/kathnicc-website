@@ -39,7 +39,7 @@ export default function SignatureSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="flex flex-col lg:flex-row items-center justify-between gap-10"
+          className="flex flex-col lg:flex-row items-center justify-between gap-16"
         >
 
           {/* Left Image */}
@@ -47,44 +47,31 @@ export default function SignatureSection() {
             <Image
               src="/hero-image.jpg"
               alt="Signature Space"
-              width={600}
-              height={400}
-              className="w-full h-auto rounded object-cover"
+              width={500}
+              height={900}
+              className="w-full max-w-lg h-[700px] rounded-lg object-cover shadow-lg"
             />
           </motion.div>
 
           {/* Right Content */}
-          <motion.div variants={itemVariants} className="w-full lg:w-1/2">
-            <h2 className="text-[#4e2e1e] text-4xl md:text-5xl font-serif mb-6 leading-tight">
-              OUR <br />
-              SIGNATURE <br />
+          <motion.div variants={itemVariants} className="w-full lg:w-1/2 lg:pl-8">
+            <h2 className="text-[#6b4e37] text-5xl md:text-8xl font-velista mb-8 leading-tight tracking-wide font-semibold">
+              OUR<br />
+              SIGNATURE<br />
               SPACES
             </h2>
-            <p className="text-[#4e2e1e] text-base md:text-lg font-light mb-6 max-w-md">
-              A curated showcase of our finest transformations – blending form, function, and luxury.
+            <p className="text-[#6b4e37] text-lg md:text-2xl font-light mb-8 max-w-sm leading-relaxed">
+              A curated showcase of our finest transformations –<br />
+              blending form,<br />
+              function, and luxury.
             </p>
-            <div className="w-16 border-b-2 border-black"></div>
+            <div className="w-full border-b-2 border-[#6b4e37]"></div>
           </motion.div>
 
         </motion.div>
       </div>
 
-      {/* Moodboard Image Section */}
-      <motion.div
-        variants={itemVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        className="w-full mt-16"
-      >
-        <Image
-          src="/moodboard.jpg"
-          alt="Design Moodboard"
-          width={1920}
-          height={800}
-          className="w-full h-auto object-cover"
-        />
-      </motion.div>
-
+      {/* Remove moodboard section for cleaner look */}
     </section>
   )
 }

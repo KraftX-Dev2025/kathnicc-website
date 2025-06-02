@@ -30,7 +30,7 @@ export default function ServicesSection() {
     {
       id: 1,
       title: "INTERIOR DESIGN",
-      image: "/service1.jpg",
+      image: "/service1.jpeg",
       hasOverlay: true,
       description: "Tailored interior solutions for new builds, renovations, or redesigns. We combine spatial planning, mood setting, and aesthetic harmony to create truly unique environments.",
       isActive: false
@@ -38,7 +38,7 @@ export default function ServicesSection() {
     {
       id: 2,
       title: "HOME DÉCOR CURATION",
-      image: "/service2.jpg",
+      image: "/service1.jpeg",
       hasOverlay: true,
       description: "Tailored interior solutions for new builds, renovations, or redesigns. We combine spatial planning, mood setting, and aesthetic harmony to create truly unique environments.",
       isActive: true
@@ -46,7 +46,7 @@ export default function ServicesSection() {
     {
       id: 3,
       title: "LUXURY HOME MAKEOVERS",
-      image: "/service3.jpg",
+      image: "/service1.jpeg",
       hasOverlay: false,
       description: "",
       isActive: false
@@ -54,7 +54,7 @@ export default function ServicesSection() {
     {
       id: 4,
       title: "COLOR &\nMATERIAL CONSULTATION",
-      image: "/service4.jpg",
+      image: "/service1.jpeg",
       hasOverlay: false,
       description: "",
       isActive: false
@@ -62,7 +62,7 @@ export default function ServicesSection() {
     {
       id: 5,
       title: "TURNKEY STYLING FOR RENTALS",
-      image: "/service5.jpg",
+      image: "/service1.jpeg",
       hasOverlay: false,
       description: "",
       isActive: false
@@ -70,7 +70,7 @@ export default function ServicesSection() {
     {
       id: 6,
       title: "SPACE PLANNING\n& LAYOUT",
-      image: "/service6.jpg",
+      image: "/service1.jpeg",
       hasOverlay: false,
       description: "",
       isActive: false
@@ -78,7 +78,7 @@ export default function ServicesSection() {
     {
       id: 7,
       title: "CUSTOM FURNITURE\nDESIGN",
-      image: "/service7.jpg",
+      image: "/service1.jpeg",
       hasOverlay: false,
       description: "",
       isActive: false
@@ -120,8 +120,8 @@ export default function ServicesSection() {
                         className="object-cover"
                       />
                       {service.hasOverlay && (
-                        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-48 h-48 bg-white/30 text-[#4e2e1e] text-xs p-4 backdrop-blur-sm">
-                          <p className="text-left text-sm font-bold text-white">{service.description}</p>
+                        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-48 h-48 bg-white/60 text-[#4e2e1e] text-xs p-4 backdrop-blur-sm">
+                          <p className="text-left text-sm font-bold">{service.description}</p>
                         </div>
                       )}
                     </div>
