@@ -88,10 +88,10 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="bg-cover bg-center min-h-screen flex items-center ml-4 md:ml-44"
-      style={{ backgroundImage: "url('/texture-bg.webp')" }}
+      className="bg-cover bg-center min-h-screen flex items-center "
+      style={{ backgroundImage: "url('/background-texture.webp')" }}
     >
-      <div className="w-full">
+      <div className="w-full ml-4 md:ml-44">
         <motion.div
           ref={ref}
           initial="hidden"
