@@ -4,7 +4,7 @@ import { useRef } from "react"
 import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 
-export default function PortfolioSection() {
+export default function SignatureSection() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 

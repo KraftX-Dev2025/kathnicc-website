@@ -101,7 +101,7 @@ export default function ServicesSection() {
           {/* Heading */}
           <motion.h2
             variants={itemVariants}
-            className="text-left text-4xl md:text-5xl text-[#4e2e1e] font-serif mb-12 tracking-wide"
+            className="text-left text-4xl md:text-7xl text-[#4e2e1e] font-velista mb-12 tracking-wide"
           >
             OUR SERVICES
           </motion.h2>
@@ -120,18 +120,16 @@ export default function ServicesSection() {
                         className="object-cover"
                       />
                       {service.hasOverlay && (
-                        <div className="absolute inset-0 bg-[#4e2e1e]/80 text-white text-sm p-4 flex items-center justify-center text-center">
-                          {service.description}
+                        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-48 h-48 bg-white/30 text-[#4e2e1e] text-xs p-4 backdrop-blur-sm">
+                          <p className="text-left text-sm font-bold text-white">{service.description}</p>
                         </div>
                       )}
                     </div>
-                    <div className="text-center mt-4">
-                      <p className="text-[#4e2e1e] font-serif text-sm whitespace-pre-line">
+                    <div className="text-left mt-4 w-48">
+                      <p className="text-[#4e2e1e] font-serif text-2xl font-semibold ">
                         {service.title}
                       </p>
-                      {service.isActive && (
-                        <div className="w-12 border-b-2 border-black mt-1 mx-auto"></div>
-                      )}
+
                     </div>
                   </div>
                 ))}
