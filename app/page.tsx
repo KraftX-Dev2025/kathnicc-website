@@ -5,7 +5,6 @@ import PortfolioSection from "@/components/portfolio-section"
 import TestimonialsSection from "@/components/testimonials-section"
 import BlogSection from "@/components/blog-section"
 import ContactSection from "@/components/contact-section"
-import FloatingCards from "@/components/floating-cards"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 
@@ -16,10 +15,7 @@ export default function Home() {
 
       <HeroSection />
 
-      <div className="relative">
-        <FloatingCards />
-        <AboutSection />
-      </div>
+      <AboutSection />
 
       <ServicesSection />
 

@@ -28,79 +28,61 @@ export default function AboutSection() {
   }
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-white relative">
-      <div className="container mx-auto px-6">
+    <section id="about" className="relative flex items-start justify-center min-h-screen py-12 md:py-20 p-6">
+      {/* Background texture */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Image
+          src="/background-texture.webp"
+          alt="Background texture"
+          fill
+          className="object-cover object-center opacity-90"
+          priority
+        />
+      </div>
+
+      {/* Content positioned within symbol design */}
+      <div className="relative z-20 max-w-3xl w-full px-12 py-16">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          className="text-center"
         >
-          <div className="relative h-[500px]">
-            <motion.div variants={itemVariants} className="absolute top-0 left-0 w-[70%] h-[70%] z-10">
-              <Image
-                src="/image3.jpg"
-                alt="Interior design"
-                fill
-                className="object-cover rounded-md shadow-lg"
-              />
-            </motion.div>
-            <motion.div variants={itemVariants} className="absolute bottom-0 right-0 w-[60%] h-[60%] z-20">
-              <Image
-                src="/image2.jpg"
-                alt="Interior detail"
-                fill
-                className="object-cover rounded-md shadow-lg"
-              />
-            </motion.div>
-            <motion.div
-              variants={itemVariants}
-              className="absolute top-[60%] left-[10%] w-16 h-16 rounded-full bg-[#D9C5B3] z-0"
-            />
-            <motion.div
-              variants={itemVariants}
-              className="absolute top-[20%] right-[5%] w-24 h-24 rounded-full bg-[#8B6E4E]/10 z-0"
-            />
-          </div>
-
-          <motion.div variants={containerVariants} className="space-y-6">
-            <motion.span
-              variants={itemVariants}
-              className="text-[#8B6E4E] uppercase tracking-widest text-sm font-medium"
-            >
-              <Image src={"/kathnicc_no_bg.webp"} alt="Logo" width={400} height={400} className="inline-block mr-2" />
-            </motion.span>
-            <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-serif text-[#3C3530]">
-              Your Story, Your Space — <br />
-              <span className="text-[#8B6E4E]">Beautifully</span> Told
-            </motion.h2>
-            <motion.p variants={itemVariants} className="text-[#5D534B]">
-              At Kathnicc, we believe that your home is your sanctuary. Our design philosophy is rooted in storytelling
-              — every texture, every color, every layout is chosen to reflect who you are.
-            </motion.p>
-            <motion.p variants={itemVariants} className="text-[#5D534B]">
-              With a passion for elegance, function, and personalized design, we specialize in:
-            </motion.p>
-            <motion.ul variants={containerVariants} className="space-y-3">
-              <motion.li variants={itemVariants} className="flex items-center space-x-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8B6E4E]"></span>
-                <span className="text-[#5D534B]">High-end interior design</span>
-              </motion.li>
-              <motion.li variants={itemVariants} className="flex items-center space-x-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8B6E4E]"></span>
-                <span className="text-[#5D534B]">Bespoke home décor</span>
-              </motion.li>
-              <motion.li variants={itemVariants} className="flex items-center space-x-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8B6E4E]"></span>
-                <span className="text-[#5D534B]">Luxury home transformations</span>
-              </motion.li>
-            </motion.ul>
-            <motion.p variants={itemVariants} className="text-[#5D534B]">
-              Whether it's a single room refresh or a full home redesign, we infuse every project with soul,
-              sophistication, and meticulous attention to detail.
-            </motion.p>
+          {/* Logo */}
+          <motion.div variants={itemVariants} className="mb-4">
+            <Image src="/kathnicc_no_bg.webp" alt="Kathnicc Logo" width={260} height={180} className="mx-auto object-contain" />
+            <div className="w-1/3 h-[3px] bg-[#8b5e3c] mx-auto mt-6 "></div>
           </motion.div>
+
+          {/* Tagline */}
+          <motion.h2 variants={itemVariants} className="text-[#8b5e3c] text-xs md:text-2xl uppercase tracking-widest mt-8 font-medium">
+            Your Story, Your Space — Beautifully Told
+          </motion.h2>
+
+          {/* Main Description */}
+          <motion.p variants={itemVariants} className="text-[#3b3b3b] text-sm md:text-xl leading-relaxed mt-6 sm:px-24 px">
+            At Kathnicc, we believe that your home is your sanctuary. Our design philosophy is rooted in storytelling —
+            every texture, every color, every layout is chosen to reflect who you are.
+          </motion.p>
+
+          {/* Highlight Line */}
+          <motion.p variants={itemVariants} className="text-[#a25a2d] italic text-xs md:text-xl mt-6">
+            With a passion for elegance, function, and personalized design, we specialize in:
+          </motion.p>
+
+          {/* Services List */}
+          <motion.div variants={itemVariants} className="font-semibold text-[#1f1f1f] text-sm md:text-xl leading-relaxed mt-6 space-y-1">
+            <p>Bespoke home décor</p>
+            <p>High-end interior design</p>
+            <p>Luxury home transformations</p>
+          </motion.div>
+
+          {/* Footer Paragraph */}
+          <motion.p variants={itemVariants} className="text-[#333333] text-xs md:text-xl leading-relaxed mt-6">
+            Whether it's a single room refresh or a full home redesign, we infuse every project with soul, sophistication,
+            and meticulous attention to detail.
+          </motion.p>
         </motion.div>
       </div>
     </section>
