@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-transparent py-2 shadow-sm" : "bg-transparent py-4"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/60 py-2 shadow-sm backdrop-blur-sm" : "bg-transparent py-4"
         }`}
     >
       <div className="container mt-4 px-6 flex justify-between items-center">
@@ -48,7 +48,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-white hover:text-[#8B6E4E] transition-colors text-xl uppercase tracking-wider"
+              className={`hover:text-[#8B6E4E] transition-colors text-xl uppercase tracking-wider ${scrolled ? "text-[#8B6E4E]" : "text-white"}`}
             >
               {link.name}
             </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
           </Link> */}
         </nav>
 
-        <button className="md:hidden text-white ml-auto focus:outline-none" onClick={toggleMenu} aria-label="Toggle menu">
+        <button className={`md:hidden ml-auto focus:outline-none ${scrolled ? "text-[#8B6E4E]" : "text-white"}`} onClick={toggleMenu} aria-label="Toggle menu">
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>

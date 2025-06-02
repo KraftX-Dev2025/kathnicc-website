@@ -1,8 +1,7 @@
 "use client"
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import { ourServices } from "@/lib/constants"
+import Image from "next/image"
 
 export default function ServicesSection() {
   const ref = useRef<HTMLDivElement>(null)
@@ -27,52 +26,139 @@ export default function ServicesSection() {
     },
   }
 
+  const services = [
+    {
+      id: 1,
+      title: "INTERIOR DESIGN",
+      image: "/service1.jpeg",
+      hasOverlay: true,
+      description: "Tailored interior solutions for new builds, renovations, or redesigns. We combine spatial planning, mood setting, and aesthetic harmony to create truly unique environments.",
+      isActive: false
+    },
+    {
+      id: 2,
+      title: "HOME DÉCOR CURATION",
+      image: "/service1.jpeg",
+      hasOverlay: true,
+      description: "Tailored interior solutions for new builds, renovations, or redesigns. We combine spatial planning, mood setting, and aesthetic harmony to create truly unique environments.",
+      isActive: true
+    },
+    {
+      id: 3,
+      title: "LUXURY HOME MAKEOVERS",
+      image: "/service1.jpeg",
+      hasOverlay: false,
+      description: "",
+      isActive: false
+    },
+    {
+      id: 4,
+      title: "COLOR &\nMATERIAL CONSULTATION",
+      image: "/service1.jpeg",
+      hasOverlay: false,
+      description: "",
+      isActive: false
+    },
+    {
+      id: 5,
+      title: "TURNKEY STYLING FOR RENTALS",
+      image: "/service1.jpeg",
+      hasOverlay: false,
+      description: "",
+      isActive: false
+    },
+    {
+      id: 6,
+      title: "SPACE PLANNING\n& LAYOUT",
+      image: "/service1.jpeg",
+      hasOverlay: false,
+      description: "",
+      isActive: false
+    },
+    {
+      id: 7,
+      title: "CUSTOM FURNITURE\nDESIGN",
+      image: "/service1.jpeg",
+      hasOverlay: false,
+      description: "",
+      isActive: false
+    }
+  ]
+
   return (
-    <section id="services" className="py-20 md:py-32 bg-[#F8F5F2]">
-      <div className="container mx-auto px-6">
+    <section
+      id="services"
+      className="bg-cover bg-center min-h-screen flex items-center "
+      style={{ backgroundImage: "url('/background-texture.webp')" }}
+    >
+      <div className="w-full ml-4 md:ml-44">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="text-center max-w-3xl mx-auto mb-16"
         >
-          <motion.span variants={itemVariants} className="text-[#8B6E4E] uppercase tracking-widest text-sm font-medium">
-            What We Offer
-          </motion.span>
-          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-serif mt-3 text-[#3C3530]">
-            Our Services
+          {/* Heading */}
+          <motion.h2
+            variants={itemVariants}
+            className="text-left text-4xl md:text-7xl text-[#4e2e1e] font-velista mb-12 tracking-wide"
+          >
+            OUR SERVICES
           </motion.h2>
-          <motion.div variants={itemVariants} className="w-20 h-0.5 bg-[#8B6E4E] mx-auto my-6"></motion.div>
-          <motion.p variants={itemVariants} className="text-[#5D534B] max-w-2xl mx-auto">
-            We provide comprehensive design solutions tailored to your unique style and needs. Each service is crafted
-            with precision and an unwavering commitment to excellence.
-          </motion.p>
-        </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {ourServices.map((service) => (
-            <motion.div
-              key={service.id}
-              variants={itemVariants}
-              className="bg-white p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow group"
-            >
-              <div className="text-3xl text-[#8B6E4E] mb-4">{service.icon}</div>
-              <h3 className="text-xl font-serif text-[#3C3530] mb-3">{service.title}</h3>
-              <p className="text-[#5D534B] mb-6">{service.description}</p>
-              <a href="#contact" className="inline-flex items-center text-[#8B6E4E] font-medium group-hover:underline">
-                Learn more
-                <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-              </a>
-            </motion.div>
-          ))}
+          {/* Scrollable Service Cards */}
+          <motion.div variants={itemVariants} className="relative">
+            <div className="overflow-x-auto pb-8">
+              <div className="flex gap-6 min-w-max">
+                {services.map((service) => (
+                  <div key={service.id} className="flex-shrink-0">
+                    <div className="relative w-64 h-80 overflow-hidden group">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover"
+                      />
+                      {service.hasOverlay && (
+                        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-48 h-48 bg-white/60 text-[#4e2e1e] text-xs p-4 backdrop-blur-sm">
+                          <p className="text-left text-sm font-bold">{service.description}</p>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-left mt-4 w-48">
+                      <p className="text-[#4e2e1e] font-serif text-2xl font-semibold ">
+                        {service.title}
+                      </p>
+
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
+
+      {/* Custom scrollbar styles */}
+      <style jsx>{`
+        .overflow-x-auto::-webkit-scrollbar {
+          height: 6px;
+        }
+        
+        .overflow-x-auto::-webkit-scrollbar-track {
+          background: rgba(78, 46, 30, 0.1);
+          border-radius: 3px;
+        }
+        
+        .overflow-x-auto::-webkit-scrollbar-thumb {
+          background: rgba(78, 46, 30, 0.3);
+          border-radius: 3px;
+        }
+        
+        .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+          background: rgba(78, 46, 30, 0.5);
+        }
+      `}</style>
     </section>
   )
 }

@@ -1,13 +1,11 @@
 import HeroSection from "@/components/hero-section"
 import AboutSection from "@/components/about-section"
 import ServicesSection from "@/components/services-section"
-import PortfolioSection from "@/components/portfolio-section"
+import PortfolioSection from "@/components/signature-section"
 import TestimonialsSection from "@/components/testimonials-section"
-import BlogSection from "@/components/blog-section"
 import ContactSection from "@/components/contact-section"
-import FloatingCards from "@/components/floating-cards"
 import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+// import Footer from "@/components/footer"
 
 export default function Home() {
   return (
@@ -16,10 +14,7 @@ export default function Home() {
 
       <HeroSection />
 
-      <div className="relative">
-        <FloatingCards />
-        <AboutSection />
-      </div>
+      <AboutSection />
 
       <ServicesSection />
 
@@ -27,11 +22,9 @@ export default function Home() {
 
       <TestimonialsSection />
 
-      <BlogSection />
-
       <ContactSection />
 
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }

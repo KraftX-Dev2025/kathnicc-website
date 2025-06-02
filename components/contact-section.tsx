@@ -1,32 +1,17 @@
 "use client"
 
-import type React from "react"
-
 import { useRef, useState } from "react"
+import Image from "next/image"
 import { motion, useInView } from "framer-motion"
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Calendar, 
-  Send, 
-  Instagram, 
-  Facebook, 
-  Linkedin, 
-  Youtube, 
-  MessageSquare
-} from "lucide-react"
-import { FaPinterestP } from "react-icons/fa6";
-import { contactFormFields, contactInfo, socialLinks } from "@/lib/constants"
 
 export default function ContactSection() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
   })
 
   const containerVariants = {
@@ -34,7 +19,7 @@ export default function ContactSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.2,
       },
     },
   }
@@ -44,138 +29,138 @@ export default function ContactSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.4 },
+      transition: { duration: 0.2 },
     },
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormState((prev) => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission logic here
-    console.log(formState)
-    alert("Thank you for your message. We'll get back to you soon!")
-    setFormState({ name: "", email: "", phone: "", message: "" })
+    // Handle form submission
+    console.log('Form submitted:', formData)
   }
 
-  // Render contact information item
-  const renderContactItem = (contact: typeof contactInfo[0]) => {
-    const IconComponent = contact.icon
-    return (
-      <div key={contact.label} className="flex items-center">
-        <IconComponent className="text-[#8B6E4E] mr-4" size={20} />
-        <span className="text-[#5D534B]">{contact.text}</span>
-      </div>
-    )
-  }
-
-  // Render social media link
-  const renderSocialLink = (social: typeof socialLinks[0]) => {
-    const IconComponent = social.icon
-    return (
-      <a
-        key={social.label}
-        href={social.href}
-        className="w-10 h-10 rounded-full bg-[#8B6E4E] flex items-center justify-center text-white hover:bg-[#7A5F43] transition-colors"
-        aria-label={social.label}
-      >
-        <IconComponent size={18} />
-      </a>
-    )
-  }
-
-  // Render form field
-  const renderFormField = (field: typeof contactFormFields[0]) => {
-    const baseClasses = "w-full px-4 py-2 border border-[#D9C5B3] rounded-sm focus:outline-none focus:ring-2 focus:ring-[#8B6E4E]"
-    return (
-      <div key={field.name}>
-        <label htmlFor={field.name} className="block text-[#5D534B] mb-2">
-          {field.label}
-        </label>
-        {field.type === "textarea" ? (
-          <textarea
-            id={field.name}
-            name={field.name}
-            value={formState[field.name as keyof typeof formState]}
-            onChange={handleChange}
-            required={field.required}
-            rows={field.rows}
-            placeholder={field.placeholder}
-            className={baseClasses}
-          />
-        ) : (
-          <input
-            type={field.type}
-            id={field.name}
-            name={field.name}
-            value={formState[field.name as keyof typeof formState]}
-            onChange={handleChange}
-            required={field.required}
-            placeholder={field.placeholder}
-            className={baseClasses}
-          />
-        )}
-      </div>
-    )
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
   }
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-[#F8F5F2]">
-      <div className="container mx-auto px-6">
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={containerVariants}
-          className="text-center max-w-3xl mx-auto mb-16"
+    <section
+      id="contact"
+      className="bg-cover bg-center py-16 px-6"
+      style={{ backgroundImage: "url('/background-texture.webp')" }}
+    >
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={containerVariants}
+      >
+        <motion.h2
+          variants={itemVariants}
+          className="text-center text-3xl md:text-5xl font-serif text-black mb-10"
         >
-          <motion.span variants={itemVariants} className="text-[#8B6E4E] uppercase tracking-widest text-sm font-medium">
-            Get In Touch
-          </motion.span>
-          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-serif mt-3 text-[#3C3530]">
-            Let's design your dream space
-          </motion.h2>
-          <motion.div variants={itemVariants} className="w-20 h-0.5 bg-[#8B6E4E] mx-auto my-6"></motion.div>
+          LET'S <span className="italic font-bold font-script text-4xl">Design</span> YOUR DREAM SPACE
+        </motion.h2>
+
+        {/* Form Container */}
+        <motion.div variants={itemVariants} className="relative flex justify-center mb-10">
+          <div className="absolute top-20 left-0 w-full h-full bg-[#7c624d] z-0"></div>
+          <div className="bg-[#f9f6ef] z-10 p-10 w-full max-w-2xl rounded shadow-md text-center relative -mb-10">
+            <h3 className="text-xl md:text-2xl text-[#7c624d] font-serif mb-4 tracking-wide uppercase border-b-2 border-[#7c624d] inline-block">
+              SEND US A MESSAGE
+            </h3>
+
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="mt-6 space-y-5 text-left">
+              <div>
+                <label className="text-sm text-[#7c624d] font-bold block mb-1">NAME</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full border border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
+                />
+              </div>
+              <div>
+                <label className="text-sm text-[#7c624d] font-bold block mb-1">EMAIL</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full border border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
+                />
+              </div>
+              <div>
+                <label className="text-sm text-[#7c624d] font-bold block mb-1">PHONE NO</label>
+                <input
+                  type="text"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full border border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
+                />
+              </div>
+              <div>
+                <label className="text-sm text-[#7c624d] font-bold block mb-1">MESSAGE</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full border border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
+                  rows={3}
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="bg-[#b57333] text-white font-serif uppercase px-10 py-3 mt-2 hover:bg-[#a0642d] transition-colors"
+              >
+                SEND MESSAGE
+              </button>
+            </form>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <motion.div variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
-            <motion.div variants={itemVariants} className="mb-8">
-              <h3 className="text-2xl font-serif text-[#3C3530] mb-6">Contact Information</h3>
-              <div className="space-y-4">
+        {/* Footer */}
+        <motion.footer variants={itemVariants} className="bg-[#7c624d] text-[#f9f6ef] pt-20 pb-12 px-6">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
 
-                {contactInfo.map(renderContactItem)}
-              </div>
-            </motion.div>
+            {/* Contact Info */}
+            <div>
+              <h4 className="font-serif text-lg uppercase border-b border-[#f9f6ef] pb-2 mb-4">Contact</h4>
+              <p className="flex items-center gap-2 mb-2"><span>📞</span> +91-8767834926 · +91-9028002032</p>
+              <p className="flex items-center gap-2 mb-2"><span>📧</span> hello@kathnicc.com</p>
+              <p className="flex items-center gap-2"><span>📍</span> Mumbai, Available Globally</p>
+            </div>
 
-            <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-serif text-[#3C3530] mb-6">Follow Us</h3>
-              <div className="flex space-x-4">
-                {socialLinks.map(renderSocialLink)}
-              </div>
-            </motion.div>
-          </motion.div>
+            {/* Social Media */}
+            <div>
+              <h4 className="font-serif text-lg uppercase border-b border-[#f9f6ef] pb-2 mb-4">Social Media</h4>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2">📸 Instagram</li>
+                <li className="flex items-center gap-2">💼 LinkedIn</li>
+                <li className="flex items-center gap-2">📘 Facebook</li>
+              </ul>
+            </div>
 
-          <motion.div variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
-            <motion.form variants={itemVariants} onSubmit={handleSubmit} className="bg-white p-8 rounded-sm shadow-sm">
-              <h3 className="text-2xl font-serif text-[#3C3530] mb-6">Send us a message</h3>
-              <div className="space-y-4">
-                {contactFormFields.map(renderFormField)}
-                <button
-                  type="submit"
-                  className="w-full px-6 py-3 bg-[#8B6E4E] text-white rounded-sm hover:bg-[#7A5F43] transition-colors flex items-center justify-center"
-                >
-                  Send Message
-                  <Send size={16} className="ml-2" />
-                </button>
-              </div>
-            </motion.form>
-          </motion.div>
-        </div>
-      </div>
+            {/* Thank You */}
+            <div className="flex flex-col items-center justify-center">
+              <Image
+                src="/kathnicc_no_bg.webp"
+                alt="Thank You Logo"
+                width={80}
+                height={80}
+                className="mb-4"
+              />
+              <h4 className="text-lg font-serif uppercase border-b border-[#f9f6ef]">Thank You</h4>
+            </div>
+          </div>
+        </motion.footer>
+      </motion.div>
     </section>
   )
 }
