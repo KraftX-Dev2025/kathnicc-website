@@ -67,22 +67,31 @@ export default function TestimonialsSection() {
           {/* Testimonial Cards */}
           <motion.div
             variants={containerVariants}
-            className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+            className="max-w-6xl mx-auto mb-16"
           >
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="bg-[#f9f6ef] p-8 py-32 shadow-lg min-h-[400px] flex flex-col justify-center"
-              >
-                <h3 className="font-velista font-normal text-[#4b2e1e] text-5xl mb-4 border-b-2 border-[#786755] pb-2 inline-block">
-                  {testimonial.name}
-                </h3>
-                <p className="text-[#4b2e1e] leading-relaxed text-lg pt-8">
-                  "{testimonial.text}"
-                </p>
-              </motion.div>
-            ))}
+            <div className="overflow-x-auto pb-4">
+              <div className="flex md:grid md:grid-cols-3 gap-8 min-w-max md:min-w-0">
+                {testimonials.map((testimonial, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="bg-[#f9f6ef] p-8 py-32 shadow-lg min-h-[400px] flex flex-col justify-center w-80 md:w-auto flex-shrink-0"
+                  >
+                    <h3 className="font-velista font-normal text-[#4b2e1e] text-5xl mb-4 border-b-2 border-[#786755] pb-2 inline-block">
+                      {testimonial.name}
+                    </h3>
+                    <p className="text-[#4b2e1e] leading-relaxed text-lg pt-8">
+                      "{testimonial.text}"
+                    </p>
+                    <div className="flex justify-start mt-4">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-yellow-500 text-xl">★</span>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
           {/* Design Tips Section */}
@@ -91,12 +100,12 @@ export default function TestimonialsSection() {
             className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center "
           >
             {/* Left Column - Text */}
-            <motion.div variants={itemVariants} className="relative z-20 left-64">
+            <motion.div variants={itemVariants} className="relative z-20 lg:left-64 left-0">
               <h3 className="font-velista font-semibold text-2xl md:text-6xl text-[#E28F51] uppercase tracking-wide mb-2 pr-6">
                 DESIGN STORIES & STYLE TIPS
               </h3>
               <div className="w-full border-b-2 border-[#d87e3d] mb-6"></div>
-              <p className="text-[#f9f6ef] text-base md:text-xl leading-relaxed pr-64">
+              <p className="text-[#f9f6ef] text-base md:text-xl leading-relaxed lg:pr-64 pr-0">
                 Explore our collection of articles on interior design trends, styling tips, and inspiration for your home.
               </p>
             </motion.div>
@@ -123,16 +132,16 @@ export default function TestimonialsSection() {
         variants={itemVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="w-full h-[40vh] md:h-[50vh] lg:h-[60vh] relative bg-cover bg-center"
+        className="w-full bg-cover bg-center py-4 md:py-8"
         style={{ backgroundImage: "url('/background-texture.webp')" }}
       >
-        <div className="flex items-center justify-center h-full p-8">
-          <div className="relative w-full max-w-4xl h-full">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] lg:aspect-[21/9]">
             <Image
               src="/moodboard.webp"
               alt="Design Moodboard"
               fill
-              className="object-cover object-center rounded-lg shadow-lg"
+              className="object-contain rounded-lg shadow-lg"
               priority
             />
           </div>

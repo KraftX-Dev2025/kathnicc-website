@@ -60,22 +60,22 @@ export default function ContactSection() {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-center text-3xl md:text-5xl font-velista text-black mb-16"
+          className="text-center text-2xl md:text-5xl font-velista text-black mb-16 px-4"
         >
-          LET'S <span className="font-adelia text-7xl">Design</span> YOUR DREAM SPACE
+          LET'S <span className="font-adelia text-4xl md:text-7xl">Design</span> YOUR DREAM SPACE
         </motion.h2>
 
         {/* Form Container */}
-        <motion.div variants={itemVariants} className="relative flex justify-center mb-10">
+        <motion.div variants={itemVariants} className="relative flex justify-center mb-10 px-4">
           <div className="absolute top-20 left-0 w-full h-full bg-[#7c624d] z-0"></div>
-          <div className="bg-[#f9f6ef] z-10 p-10 w-full max-w-2xl rounded shadow-md text-center relative -mb-10">
-            <h3 className="text-2xl md:text-3xl text-[#7c624d] font-velista mb-4 tracking-wide uppercase font-bold border-b-2 border-[#7c624d] inline-block">
+          <div className="bg-[#f9f6ef] z-10 p-6 md:p-10 w-full max-w-2xl rounded shadow-md text-center relative -mb-10">
+            <h3 className="text-xl md:text-3xl text-[#7c624d] font-velista mb-4 tracking-wide uppercase font-bold border-b-2 border-[#7c624d] inline-block">
               SEND US A MESSAGE
             </h3>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="mt-6 space-y-5 mx-12 text-center">
-              <div >
+            <form onSubmit={handleSubmit} className="mt-6 space-y-5 mx-4 md:mx-12 text-center">
+              <div>
                 <label className="text-sm text-[#7c624d] font-bold block mb-1 text-left">NAME</label>
                 <input
                   type="text"
@@ -117,7 +117,7 @@ export default function ContactSection() {
               </div>
               <button
                 type="submit"
-                className="bg-[#b57333] text-white font-velista font-bold text-2xl uppercase px-10 py-3 mt-2 hover:bg-[#a0642d] transition-colors"
+                className="bg-[#b57333] text-white font-velista font-bold text-lg md:text-2xl uppercase px-6 md:px-10 py-3 mt-2 hover:bg-[#a0642d] transition-colors w-full md:w-auto"
               >
                 SEND MESSAGE
               </button>
