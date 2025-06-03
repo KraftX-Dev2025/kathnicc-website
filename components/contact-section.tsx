@@ -60,64 +60,64 @@ export default function ContactSection() {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-center text-3xl md:text-5xl font-serif text-black mb-10"
+          className="text-center text-3xl md:text-5xl font-velista text-black mb-16"
         >
-          LET'S <span className="italic font-bold font-script text-4xl">Design</span> YOUR DREAM SPACE
+          LET'S <span className="font-adelia text-7xl">Design</span> YOUR DREAM SPACE
         </motion.h2>
 
         {/* Form Container */}
         <motion.div variants={itemVariants} className="relative flex justify-center mb-10">
           <div className="absolute top-20 left-0 w-full h-full bg-[#7c624d] z-0"></div>
           <div className="bg-[#f9f6ef] z-10 p-10 w-full max-w-2xl rounded shadow-md text-center relative -mb-10">
-            <h3 className="text-xl md:text-2xl text-[#7c624d] font-serif mb-4 tracking-wide uppercase border-b-2 border-[#7c624d] inline-block">
+            <h3 className="text-2xl md:text-3xl text-[#7c624d] font-velista mb-4 tracking-wide uppercase font-bold border-b-2 border-[#7c624d] inline-block">
               SEND US A MESSAGE
             </h3>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="mt-6 space-y-5 text-left">
-              <div>
-                <label className="text-sm text-[#7c624d] font-bold block mb-1">NAME</label>
+            <form onSubmit={handleSubmit} className="mt-6 space-y-5 mx-12 text-center">
+              <div >
+                <label className="text-sm text-[#7c624d] font-bold block mb-1 text-left">NAME</label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full border border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
+                  className="w-full border-2 bg-transparent border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
                 />
               </div>
               <div>
-                <label className="text-sm text-[#7c624d] font-bold block mb-1">EMAIL</label>
+                <label className="text-sm text-[#7c624d] font-bold block mb-1 text-left">EMAIL</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full border border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
+                  className="w-full border-2 bg-transparent border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
                 />
               </div>
               <div>
-                <label className="text-sm text-[#7c624d] font-bold block mb-1">PHONE NO</label>
+                <label className="text-sm text-[#7c624d] font-bold block mb-1 text-left">PHONE NO</label>
                 <input
                   type="text"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full border border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
+                  className="w-full border-2 bg-transparent border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
                 />
               </div>
               <div>
-                <label className="text-sm text-[#7c624d] font-bold block mb-1">MESSAGE</label>
+                <label className="text-sm text-[#7c624d] font-bold block mb-1 text-left">MESSAGE</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full border border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
+                  className="w-full border-2 bg-transparent border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
                   rows={3}
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="bg-[#b57333] text-white font-serif uppercase px-10 py-3 mt-2 hover:bg-[#a0642d] transition-colors"
+                className="bg-[#b57333] text-white font-velista font-bold text-2xl uppercase px-10 py-3 mt-2 hover:bg-[#a0642d] transition-colors"
               >
                 SEND MESSAGE
               </button>
@@ -131,7 +131,7 @@ export default function ContactSection() {
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-serif text-lg uppercase border-b border-[#f9f6ef] pb-2 mb-4">Contact</h4>
+              <h4 className="font-velista text-2xl font-bold uppercase border-b border-[#f9f6ef] pb-2 mb-4">Contact</h4>
               <p className="flex items-center gap-2 mb-2"><span>📞</span> +91-8767834926 · +91-9028002032</p>
               <p className="flex items-center gap-2 mb-2"><span>📧</span> hello@kathnicc.com</p>
               <p className="flex items-center gap-2"><span>📍</span> Mumbai, Available Globally</p>
@@ -139,7 +139,7 @@ export default function ContactSection() {
 
             {/* Social Media */}
             <div>
-              <h4 className="font-serif text-lg uppercase border-b border-[#f9f6ef] pb-2 mb-4">Social Media</h4>
+              <h4 className="font-velista text-2xl font-bold uppercase border-b border-[#f9f6ef] pb-2 mb-4">Social Media</h4>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">📸 Instagram</li>
                 <li className="flex items-center gap-2">💼 LinkedIn</li>
@@ -150,13 +150,13 @@ export default function ContactSection() {
             {/* Thank You */}
             <div className="flex flex-col items-center justify-center">
               <Image
-                src="/kathnicc_no_bg.webp"
+                src="/k-logo-bg.png"
                 alt="Thank You Logo"
-                width={80}
-                height={80}
+                width={160}
+                height={160}
                 className="mb-4"
               />
-              <h4 className="text-lg font-serif uppercase border-b border-[#f9f6ef]">Thank You</h4>
+              <h4 className="text-2xl md:text-5xl font-bold font-velista uppercase border-b border-[#f9f6ef]">Thank You</h4>
             </div>
           </div>
         </motion.footer>
