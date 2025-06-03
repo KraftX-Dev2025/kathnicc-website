@@ -45,7 +45,7 @@ export default function SignatureSection() {
           {/* Left Image */}
           <motion.div variants={itemVariants} className="w-full lg:w-1/2">
             <Image
-              src="/hero-image.jpg"
+              src="/our-signature.png"
               alt="Signature Space"
               width={500}
               height={900}
@@ -71,7 +71,6 @@ export default function SignatureSection() {
         </motion.div>
       </div>
 
-      {/* Remove moodboard section for cleaner look */}
     </section>
   )
 }

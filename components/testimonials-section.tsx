@@ -117,6 +117,27 @@ export default function TestimonialsSection() {
         </div>
         <div className="h-[250px]"></div>
       </motion.div>
+
+      {/* Full-screen Moodboard Section */}
+      <motion.div
+        variants={itemVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        className="w-full h-[40vh] md:h-[50vh] lg:h-[60vh] relative bg-cover bg-center"
+        style={{ backgroundImage: "url('/background-texture.webp')" }}
+      >
+        <div className="flex items-center justify-center h-full p-8">
+          <div className="relative w-full max-w-4xl h-full">
+            <Image
+              src="/moodboard.webp"
+              alt="Design Moodboard"
+              fill
+              className="object-cover object-center rounded-lg shadow-lg"
+              priority
+            />
+          </div>
+        </div>
+      </motion.div>
     </section>
   )
 }
