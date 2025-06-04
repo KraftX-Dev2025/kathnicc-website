@@ -85,6 +85,14 @@ export default function AboutSection() {
           </motion.p>
         </motion.div>
       </div>
+
+      {/* Bottom repeating image strip */}
+      <div className="absolute bottom-0 left-0 w-full h-40 z-10">
+        <div
+          className="w-full h-full bg-repeat-x"
+          style={{ backgroundImage: "url('/about-symbol.webp')", backgroundSize: 'auto 100%' }}
+        ></div>
+      </div>
     </section>
   )
 }

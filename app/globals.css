@@ -2,31 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Fonts */
-@font-face {
-  font-family: 'Aceh Light';
-  src: url('/fonts/Aceh-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Adelia';
-  src: url('/fonts/adelia.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Velista';
-  src: url('/fonts/VELISTA.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 @layer base {
   :root {
     --background: #f8f5f2;
@@ -97,7 +72,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Aceh Light', sans-serif;
+    font-family: var(--font-aceh), sans-serif;
   }
   h1,
   h2,
