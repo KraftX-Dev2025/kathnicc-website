@@ -19,10 +19,10 @@ const config = {
     },
     extend: {
       fontFamily: {
-        'sans': ['Aceh Light', 'ui-sans-serif', 'system-ui'],
-        'aceh': ['Aceh Light', 'sans-serif'],
-        'adelia': ['Adelia', 'serif'],
-        'velista': ['Velista', 'serif'],
+        'sans': ['var(--font-aceh)', 'ui-sans-serif', 'system-ui'],
+        'aceh': ['var(--font-aceh)', 'sans-serif'],
+        'adelia': ['var(--font-adelia)', 'serif'],
+        'velista': ['var(--font-velista)', 'serif'],
         'poppins': ['var(--font-poppins)', 'sans-serif'],
         'playfair': ['var(--font-playfair)', 'serif'],
         'roboto': ['var(--font-roboto)', 'sans-serif'],

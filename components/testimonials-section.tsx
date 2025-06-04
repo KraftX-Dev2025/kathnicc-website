@@ -101,7 +101,7 @@ export default function TestimonialsSection() {
           >
             {/* Left Column - Text */}
             <motion.div variants={itemVariants} className="relative z-20 lg:left-64 left-0">
-              <h3 className="font-velista font-semibold text-2xl md:text-6xl text-[#E28F51] uppercase tracking-wide mb-2 pr-6">
+              <h3 className="font-velista font-semibold text-5xl md:text-6xl text-[#E28F51] uppercase tracking-wide mb-2 pr-6">
                 DESIGN STORIES & STYLE TIPS
               </h3>
               <div className="w-full border-b-2 border-[#d87e3d] mb-6"></div>
