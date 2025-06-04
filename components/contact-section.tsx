@@ -132,7 +132,7 @@ export default function ContactSection() {
             {/* Contact Info */}
             <div>
               <h4 className="font-velista text-2xl font-bold uppercase border-b border-[#f9f6ef] pb-2 mb-4">Contact</h4>
-              <p className="flex items-center gap-2 mb-2"><span>📞</span> +91-8767834926 · +91-9028002032</p>
+              <p className="flex items-center gap-2 mb-2"><span>📞</span> +91-8767834926 · +91-9028002031</p>
               <p className="flex items-center gap-2 mb-2"><span>📧</span> hello@kathnicc.com</p>
               <p className="flex items-center gap-2"><span>📍</span> Mumbai, Available Globally</p>
             </div>
