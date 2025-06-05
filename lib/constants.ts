@@ -16,7 +16,7 @@ export const navLinks = [
     { name: "Services", href: "#services" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Testimonials", href: "#testimonials" },
-    { name: "Blog", href: "#blog" },
+    // { name: "Blog", href: "#blog" },
     { name: "Contact", href: "#contact" },
 ]
 
@@ -25,7 +25,7 @@ export const quickLinks = [
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
     { href: "#portfolio", label: "Portfolio" },
-    { href: "#blog", label: "Blog" },
+    // { href: "#blog", label: "Blog" },
     { href: "#contact", label: "Contact" },
 ];
 

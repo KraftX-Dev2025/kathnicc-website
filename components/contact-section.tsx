@@ -68,13 +68,13 @@ export default function ContactSection() {
         {/* Form Container */}
         <motion.div variants={itemVariants} className="relative flex justify-center mb-10 px-4">
           <div className="absolute top-20 left-0 w-full h-full bg-[#7c624d] z-0"></div>
-          <div className="bg-[#f9f6ef] z-10 p-6 md:p-10 w-full max-w-2xl rounded shadow-md text-center relative -mb-10">
+          <div className="bg-[#f9f6ef] z-10 p-6 md:p-10 w-full max-w-lg rounded shadow-md text-center relative -mb-10">
             <h3 className="text-xl md:text-3xl text-[#7c624d] font-velista mb-4 tracking-wide uppercase font-bold border-b-2 border-[#7c624d] inline-block">
               SEND US A MESSAGE
             </h3>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="mt-6 space-y-5 mx-4 md:mx-12 text-center">
+            <form onSubmit={handleSubmit} className="mt-6 space-y-5 mx-2 md:mx-6 text-center">
               <div>
                 <label className="text-sm text-[#7c624d] font-bold block mb-1 text-left">NAME</label>
                 <input
@@ -106,18 +106,18 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label className="text-sm text-[#7c624d] font-bold block mb-1 text-left">MESSAGE</label>
+                <label className="text-sm text-[#7c624d] font-bold block mb-1 text-left">REQUIREMENTS</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full border-2 bg-transparent border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333]"
+                  className="w-full border-2 bg-transparent border-[#7c624d] p-2 focus:outline-none focus:border-[#b57333] resize-none"
                   rows={3}
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="bg-[#b57333] text-white font-velista font-bold text-lg md:text-2xl uppercase px-6 md:px-10 py-3 mt-2 hover:bg-[#a0642d] transition-colors w-full md:w-auto"
+                className="bg-[#b57333] text-white font-velista font-bold text-lg md:text-2xl uppercase px-6 md:px-10 py-3 mt-2 hover:bg-[#a0642d] transition-colors w-full"
               >
                 SEND MESSAGE
               </button>
@@ -132,18 +132,18 @@ export default function ContactSection() {
             {/* Contact Info */}
             <div>
               <h4 className="font-velista text-2xl font-bold uppercase border-b border-[#f9f6ef] pb-2 mb-4">Contact</h4>
-              <p className="flex items-center gap-2 mb-2"><span>📞</span> +91-8767834926 · +91-9028002031</p>
-              <p className="flex items-center gap-2 mb-2"><span>📧</span> hello@kathnicc.com</p>
-              <p className="flex items-center gap-2"><span>📍</span> Mumbai, Available Globally</p>
+              <p className="flex items-center gap-2 mb-2"> +91-8767834926 · +91-9028002031</p>
+              <p className="flex items-center gap-2 mb-2"> hello@kathnicc.com</p>
+              <p className="flex items-center gap-2"> Mumbai, Available Globally</p>
             </div>
 
             {/* Social Media */}
             <div>
               <h4 className="font-velista text-2xl font-bold uppercase border-b border-[#f9f6ef] pb-2 mb-4">Social Media</h4>
               <ul className="space-y-2">
-                <li className="flex items-center gap-2">📸 Instagram</li>
-                <li className="flex items-center gap-2">💼 LinkedIn</li>
-                <li className="flex items-center gap-2">📘 Facebook</li>
+                <li className="flex items-center gap-2"> Instagram</li>
+                <li className="flex items-center gap-2"> LinkedIn</li>
+                <li className="flex items-center gap-2"> Facebook</li>
               </ul>
             </div>
 

@@ -16,7 +16,7 @@ export default function HeroSection() {
         className="absolute inset-0 w-screen h-screen"
       >
         <Image
-          src="/hero-image.jpg"
+          src="/hero-image.webp"
           alt="Luxury interior"
           fill
           className="object-cover"
@@ -31,7 +31,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-          className="bg-white/70 backdrop-blur-sm shadow-2xl p-4 sm:p-6 md:p-8 lg:p-12 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl w-full sm:w-3/4 md:w-2/3 lg:w-1/4 mx-2 sm:mx-4 md:mx-8 lg:mx-0 lg:mr-24 h-auto lg:h-full flex flex-col justify-start"
+          className="bg-white/60 backdrop-blur-sm shadow-2xl p-4 sm:p-6 md:p-8 lg:p-12 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl w-full sm:w-3/4 md:w-2/3 lg:w-1/4 mx-2 sm:mx-4 md:mx-8 lg:mx-0 lg:mr-20 h-auto lg:h-full flex flex-col justify-start"
         >
           {/* Logo */}
           <div className="mb-4 sm:mb-6 flex justify-center">
@@ -43,16 +43,16 @@ export default function HeroSection() {
             LUXURY LIVING THOUGHTFULLY
           </h1>
           {/* Decorative Line */}
-          <span className="h-[2px] border border-[#8B6E4E] mb-6 w-2/3 md:w-[70%] mx-auto" />
-          <span className="relative bottom-2 sm:bottom-4 -ml-8 text-[#8C4F23] font-adelia mt-2 text-2xl sm:text-3xl md:text-5xl font-normal text-center block">Designed</span>
+          {/* <span className="h-[2px] bg-[#8B6E4E] mb-6 w-2/3 md:w-[65%] mx-auto" /> */}
+          <span className="relative -ml-4 text-[#8C4F23] font-adelia mt-2 text-2xl sm:text-3xl md:text-5xl font-normal text-center block">Designed</span>
 
           {/* Text Block matching the image */}
-          <div className="mt-8 sm:mt-10 md:mt-12 w-full flex items-center flex-col justify-center px-2 sm:px-4 md:px-4 md:ml-2">
+          <div className="mt-8 sm:mt-12 md:mt-14 w-full flex items-center flex-col justify-center px-2 sm:px-4 md:px-4 md:ml-2">
             <p className="text-sm sm:text-base md:text-md 2xl:text-md  text-[#3C3530] font-aceh leading-snug text-left w-full">
-              Elevate your space with Kathanicc –<br />
+              Elevate your space with Kathanicc–<br />
               where interior design meets artistry and refined living
             </p>
-            <div className="w-full h-[2px] bg-[#8B6E4E] rounded-full my-4 sm:my-2" />
+            <div className="w-full h-[2px] bg-[#8B6E4E] rounded-full my-4 sm:my-6" />
             <p className="text-sm sm:text-base md:text-md 2xl:text-md text-[#3C3530] font-aceh leading-snug text-left w-full">
               From curated home décor to full-scale luxury makeovers, we craft timeless interiors that reflect your lifestyle, taste, and story.
             </p>
