@@ -28,7 +28,7 @@ export default function AboutSection() {
   }
 
   return (
-    <section id="about" className="relative flex items-start justify-center min-h-screen py-12 md:py-20 p-6">
+    <section id="about" className="relative flex items-start justify-center min-h-screen py-12 md:pb-20 p-6">
       {/* Background texture */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
@@ -52,11 +52,11 @@ export default function AboutSection() {
           {/* Logo */}
           <motion.div variants={itemVariants} className="mb-4">
             <Image src="/kathnicc_no_bg.webp" alt="Kathnicc Logo" width={260} height={180} className="mx-auto object-contain" />
-            <div className="w-1/3 h-[3px] bg-[#8b5e3c] mx-auto mt-6 "></div>
+            <div className="w-2/3 h-[3px] mx-auto mt-6 bg-gradient-to-r from-transparent via-[#8b5e3c] to-transparent"></div>
           </motion.div>
 
           {/* Tagline */}
-          <motion.h2 variants={itemVariants} className="text-[#8b5e3c] text-xs md:text-2xl uppercase tracking-widest mt-8 font-medium">
+          <motion.h2 variants={itemVariants} className="text-[#8b5e3c] text-xs md:text-2xl uppercase tracking-widest mt-12 font-medium">
             Your Story, Your Space — Beautifully Told
           </motion.h2>
 
@@ -87,10 +87,14 @@ export default function AboutSection() {
       </div>
 
       {/* Bottom repeating image strip */}
-      <div className="absolute bottom-0 left-0 w-full h-40 z-10">
+      <div className="absolute bottom-0 left-0 w-full h-28 z-10">
         <div
-          className="w-full h-full bg-repeat-x"
-          style={{ backgroundImage: "url('/about-symbol.webp')", backgroundSize: 'auto 100%' }}
+          className="w-full h-full bg-repeat-x bg-center opacity-70"
+          style={{
+            backgroundImage: "url('/about-symbol.webp')",
+            backgroundSize: '70px auto',
+            backgroundPosition: 'center bottom'
+          }}
         ></div>
       </div>
     </section>

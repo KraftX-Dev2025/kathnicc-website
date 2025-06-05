@@ -1,12 +1,38 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 
 export default function TestimonialsSection() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
+
+  // Carousel state
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  // Images for the carousel
+  const carouselImages = [
+    "/designs/design-1.webp",
+    "/designs/design-2.webp",
+    "/designs/design-3.webp",
+    "/designs/design-4.webp",
+    "/designs/design-5.webp",
+    "/designs/design-6.webp",
+    "/designs/design-7.webp",
+    "/designs/design-8.webp",
+  ]
+
+  // Auto-rotate carousel every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        (prevIndex + 1) % carouselImages.length
+      )
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [carouselImages.length])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -110,16 +136,43 @@ export default function TestimonialsSection() {
               </p>
             </motion.div>
 
-            {/* Right Column - Image */}
-            <motion.div variants={itemVariants} className="flex justify-center relative">
-              <div className="bg-[#f9f6ef] max-w-md relative z-10" style={{ marginBottom: '-250px' }}>
-                <Image
-                  src="/testimonials.webp"
-                  alt="Interior Design Inspiration"
-                  width={400}
-                  height={800}
-                  className="w-full h-[700px] object-cover"
-                />
+            {/* Right Column - Image Carousel */}
+            <motion.div variants={itemVariants} className="flex justify-center relative w-full">
+              <div className="bg-[#f9f6ef] w-full max-w-md relative z-10" style={{ marginBottom: '-250px' }}>
+
+                <div className="relative w-full h-[700px] min-h-[700px] overflow-hidden shadow-lg">
+                  {carouselImages.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                        }`}
+                      style={{ minHeight: '700px' }}
+                    >
+                      {/* Using regular img tag to test */}
+                      <img
+                        src={image}
+                        alt={`Interior Design Inspiration ${index + 1}`}
+                        className="w-full h-full object-cover block"
+                        style={{ minHeight: '700px', width: '100%' }}
+                      />
+                    </div>
+                  ))}
+
+                </div>
+
+                {/* Carousel Indicators */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+                  {carouselImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentImageIndex
+                        ? 'bg-[#E28F51] scale-110'
+                        : 'bg-[#E28F51]/30 hover:bg-white/70'
+                        }`}
+                    />
+                  ))}
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -141,7 +194,7 @@ export default function TestimonialsSection() {
               src="/moodboard.webp"
               alt="Design Moodboard"
               fill
-              className="object-contain rounded-lg shadow-lg"
+              className="object-contain rounded-lg "
               priority
             />
           </div>
