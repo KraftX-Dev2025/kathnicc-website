@@ -105,7 +105,7 @@ export default function ServicesSection() {
           {/* Heading */}
           <motion.h2
             variants={itemVariants}
-            className="text-left text-4xl md:text-7xl text-[#4e2e1e] font-velista mb-12 tracking-wide"
+            className="text-left text-4xl md:text-7xl text-[#4e2e1e] font-velista mb-12 tracking-wide font-bold"
           >
             OUR SERVICES
           </motion.h2>

@@ -21,13 +21,13 @@ export default function SignatureSection() {
     "/signature/signature-8.webp",
   ]
 
-  // Auto-rotate carousel every 5 seconds
+  // Auto-rotate carousel every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % carouselImages.length
       )
-    }, 5000)
+    }, 3000)
 
     return () => clearInterval(interval)
   }, [carouselImages.length])
@@ -91,8 +91,8 @@ export default function SignatureSection() {
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentImageIndex
-                        ? 'bg-white'
-                        : 'bg-white/50 hover:bg-white/70'
+                      ? 'bg-white'
+                      : 'bg-white/50 hover:bg-white/70'
                       }`}
                   />
                 ))}
@@ -112,7 +112,7 @@ export default function SignatureSection() {
               blending form,<br />
               function, and luxury.
             </p>
-            <div className="w-full border-b-2 border-[#6b4e37]"></div>
+            <div className="w-full border-b-4 border-[#6b4e37]"></div>
           </motion.div>
 
         </motion.div>

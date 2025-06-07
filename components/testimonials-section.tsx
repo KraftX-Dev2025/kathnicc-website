@@ -103,7 +103,7 @@ export default function TestimonialsSection() {
                     variants={itemVariants}
                     className="bg-[#f9f6ef] p-8 py-32 shadow-lg min-h-[400px] flex flex-col justify-center w-80 md:w-auto flex-shrink-0"
                   >
-                    <h3 className="font-velista font-normal text-[#4b2e1e] text-5xl mb-4 border-b-2 border-[#786755] pb-2 inline-block">
+                    <h3 className="font-velista font-bold sm:mr-8  text-[#4b2e1e] text-5xl mb-4 border-b-2 border-[#786755] pb-2 inline-block">
                       {testimonial.name}
                     </h3>
                     <p className="text-[#4b2e1e] leading-relaxed text-lg pt-8">
@@ -127,10 +127,9 @@ export default function TestimonialsSection() {
           >
             {/* Left Column - Text */}
             <motion.div variants={itemVariants} className="relative z-20 lg:left-64 left-0">
-              <h3 className="font-velista font-semibold text-5xl md:text-6xl text-[#E28F51] uppercase tracking-wide mb-2 pr-6">
+              <h3 className="font-velista font-semibold text-5xl md:text-6xl text-[#E28F51] uppercase tracking-wide mb-2 pr-6 border-b-4 border-[#d87e3d] sm:mr-12">
                 DESIGN STORIES & STYLE TIPS
               </h3>
-              <div className="w-full border-b-2 border-[#d87e3d] mb-6"></div>
               <p className="text-[#f9f6ef] text-base md:text-xl leading-relaxed lg:pr-64 pr-0">
                 Explore our collection of articles on interior design trends, styling tips, and inspiration for your home.
               </p>
