@@ -60,9 +60,9 @@ export default function ContactSection() {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-center text-2xl md:text-5xl font-velista text-black mb-16 px-4"
+          className="text-center text-2xl md:text-5xl font-velista text-black mb-16 px-4 "
         >
-          LET'S <span className="font-adelia text-4xl md:text-7xl">Design</span> YOUR DREAM SPACE
+          LET'S <span className="font-adelia text-3xl md:text-7xl relative -top-3 md:-top-2">Design</span> YOUR DREAM SPACE
         </motion.h2>
 
         {/* Form Container */}
@@ -127,11 +127,11 @@ export default function ContactSection() {
 
         {/* Footer */}
         <motion.footer variants={itemVariants} className="bg-[#7c624d] text-[#f9f6ef] pt-20 pb-12 px-6">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-end min-h-[220px]">
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-velista text-2xl font-bold uppercase border-b border-[#f9f6ef] pb-2 mb-4">Contact</h4>
+              <h4 className="font-velista text-2xl font-bold uppercase border-b border-[#f9f6ef] pb-2 mb-4 mr-36">Contact</h4>
               <p className="flex items-center gap-2 mb-2"> +91-8767834926 · +91-9028002031</p>
               <p className="flex items-center gap-2 mb-2"> hello@kathnicc.com</p>
               <p className="flex items-center gap-2"> Mumbai, Available Globally</p>
@@ -139,7 +139,7 @@ export default function ContactSection() {
 
             {/* Social Media */}
             <div>
-              <h4 className="font-velista text-2xl font-bold uppercase border-b border-[#f9f6ef] pb-2 mb-4">Social Media</h4>
+              <h4 className="font-velista text-2xl font-bold uppercase border-b border-[#f9f6ef] pb-2 mb-4 mr-36">Social Media</h4>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2"> Instagram</li>
                 <li className="flex items-center gap-2"> LinkedIn</li>
@@ -152,9 +152,9 @@ export default function ContactSection() {
               <Image
                 src="/k-logo-bg.png"
                 alt="Thank You Logo"
-                width={160}
-                height={160}
-                className="mb-4"
+                width={120}
+                height={120}
+
               />
               <h4 className="text-2xl md:text-5xl font-bold font-velista uppercase border-b border-[#f9f6ef]">Thank You</h4>
             </div>
